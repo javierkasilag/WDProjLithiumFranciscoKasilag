@@ -6,7 +6,7 @@
 (Taken from the [Hearts of Iron IV Modding Wiki](https://hoi4mods.miraheze.org/wiki/Thousand_Week_Reich))<br>
 
 ### Description:
-This website is about the lore of Thousand Week Reich (TWR), an alternate history scenario about Germany winning World War 2 made for the real-time strategy (RTS) game called Hearts of Iron 4 (HoI4). On the webpage, users can explore an interactive map of the world during that era. By clicking or hovering over a specific region or country, a  GUI panel appears, giving detailed information about that area,  including its military status, political system, economics, cultural developments,  recent history, etc. Additionally, the site will have information of key figures and power blocs or spheres of influence that help users better understand the current timeline of the scenario, with all its alliances, conflicts, and ideologies. There will also be visual media, such as simulations and possibly news broadcasts/papers, during that era to improve the user’s immersion into said scenario.
+This website is about the lore of Thousand Week Reich (TWR), an alternate history scenario about Germany winning World War 2 made for the real-time strategy (RTS) game called Hearts of Iron 4 (HoI4). On the webpage, users can explore an interactive map of the world during that era. By clicking or hovering over a specific region or country, a  GUI panel appears, giving detailed information about that area,  including its military status, political system, economics, cultural developments,  recent history, etc. Additionally, the site will have information about key figures and power blocs or spheres of influence that help users better understand the current timeline of the scenario, with all its alliances, conflicts, and ideologies. There will also be visual media, such as simulations and possibly news broadcasts/papers, during that era to improve the user’s immersion into said scenario.
 
 ******
 
@@ -20,7 +20,8 @@ A map of the TWR world as of the in-game start date (1 January 1952). Will use J
 #### P3 (Blocs):
 A description of each of the major and minor geopolitical factions of TWR, again as of the in-game start date, detailing everything from member nations to socioeconomic issues confronting the factions.
 #### P4:
-#### P5:
+#### P5 (Sources):
+A list of all the sources and media used for the project.
 
 ******
 
