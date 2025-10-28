@@ -1,4 +1,4 @@
-# LiFrancisco / LiKasilag PROJECT PROPOSAL
+<img width="180" height="33" alt="image" src="https://github.com/user-attachments/assets/5af3a2a7-4c8c-4101-988d-ded086accdf3" /># LiFrancisco / LiKasilag PROJECT PROPOSAL
 ## Thousand Week Reich: An Alternate History Scenario
 ******
 ### Logo:
@@ -28,8 +28,19 @@ A list of all the sources and media used for the project.
 
 ### Wireframes:
 #### Home:
+<img width="1920" height="1080" alt="Home" src="https://github.com/user-attachments/assets/0eeff886-68bf-4a5f-ba48-c570d9c4fffa" />
+
 #### P1:
+<img width="1920" height="1080" alt="Map" src="https://github.com/user-attachments/assets/f7d6e997-85bc-4a9b-877d-60631b7fbced" />
+
 #### P2:
+<img width="1920" height="1080" alt="Map" src="https://github.com/user-attachments/assets/56b8406b-527e-4f84-a5ef-ac6b8a4dc884" />
+
 #### P3:
+<img width="1920" height="1080" alt="Blocs" src="https://github.com/user-attachments/assets/5b22e013-9a08-462a-a775-28174ef69baf" />
+
 #### P4:
+<img width="1920" height="1080" alt="Cities" src="https://github.com/user-attachments/assets/ff511889-cd4f-4908-9735-f9f970974277" />
+
 #### P5:
+<img width="1920" height="1080" alt="Sources" src="https://github.com/user-attachments/assets/3ff42047-5a28-463b-bfc7-1dabaa17185b" />
