@@ -19,7 +19,8 @@ A month-by-month timeline of WW2 as it happened in the TWR timeline, detailing m
 A map of the TWR world as of the in-game start date (1 January 1952). Will use JavaScript for clickable infoboxes about the in-lore histories and situations of each region of the world, with associated animations.
 #### P3 (Blocs):
 A description of each of the major and minor geopolitical factions of TWR, again as of the in-game start date, detailing everything from member nations to socioeconomic issues confronting the factions.
-#### P4:
+#### P4 (Cities):
+A description of some major and minor cities per bloc or important country. Will include appropriate images of the cities as they were in real life or alternate versions thereof, with corresponding fictional information.
 #### P5 (Sources):
 A list of all the sources and media used for the project.
 
