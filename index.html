@@ -1,49 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <style>
-      @font-face {
-          font-family: 'VCR OSD Mono';
-          src: url('assets/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
-          font-weight: normal;
-          font-style: normal;
-      }
-      
-      * {
-        font-family: 'VCR OSD Mono', monospace;
-      }
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Home — Thousand Week Reich</title>
 
-      #toHome {
-        display: block;
-        margin: 0 auto;
-      }
+<style>
+@font-face {
+  font-family: 'VCR OSD Mono';
+  src: url('assets/fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
-      #intro, footer {
-        text-align: center;
-        width: 80%;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
-  <header>
-    <a href="index.html"><img id="toHome" src="public/assets/Logo.png" width="400"/></a>
-  </header>
-  <body>
-      <br>
-      <p id="intro">
-        <i>The year is 1952 - while the spectre of Nazi domination stands over a nightmarish Europe, the western powers led by the rising United States and the battered but not beaten United Kingdom rise to challenge the wavering German superpower. Since its victory at Dunkirk and the long and costly war against the Soviet Union, Germany’s cruel and nightmarish rule over Europe seems outwardly secure, but as Hitler grows old and ill, instability and rebellion threaten to shake this ‘New Order’ apart. At the same time, the ripples caused by the fall of Europe roll across the globe changing the course of history, with European colonial empires falling and a rising Chinese Republic eager to fill the vacuum left by a defeated Japan. though the memory of war lies fresh in the memories of everyone, the status quo cannot hold for long…</i>
-        <br><br>
-        Thousand Week Reich is an alternate history mod for the real-time strategy (RTS) game Hearts of Iron 4 that attempts to bring a sense of grounded, gritty realism to the age-old trope of an Axis 'victory' in the Second World War. Originally based on a series of maps by digital artist AP246/Proximexo, the TWR mod aims to explore a more grounded and ‘realistic’ version of the trope of a victorious Nazi Germany. Enter the world of TWR in 1952 and fight to hold onto the disintegrating remains of German ‘New Order’ or rise up to the task of defeating the oppressor and liberating Europe from Nazi tyranny.
-      </p>
-  </body>
-  <br>
-  <footer>
-    <nav class="nav">
-      <button>Map</button>
-      <button>Blocs</button>
-      <button>Cities</button>
-      <button>Tech</button>
-      <button>Sources</button>
-    </nav><br>
-    <div id="copyright">©Quandale Dingle Productions</div>
-  </footer>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'VCR OSD Mono', monospace;
+}
+
+body {
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+header {
+  border-bottom: 6px solid #444;
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+header img {
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  padding: 40px 6vw 100px;
+  min-height: 600px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 50px;
+  border-top: 6px solid #444;
+  padding: 0 3vw;
+  height: 90px;
+}
+
+
+footer .copyright {
+  color: #bbb;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav a.nav-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 64px;
+  border: 3px solid #444;
+  background: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  text-decoration: none;
+  color: #111;
+  font-family: 'VCR OSD Mono', monospace;
+  cursor: pointer;
+}
+
+.nav a.nav-button:hover {
+  background: #444;
+  color: #fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="index.html"><img src="public/assets/Logo.png" alt="Home Logo"/></a>
+</header>
+
+<main class="hero">
+  <p>
+    <i>The year is 1952 - while the spectre of Nazi domination stands over a nightmarish Europe, the western powers led by the rising United States and the battered but not beaten United Kingdom rise to challenge the wavering German superpower. Since its victory at Dunkirk and the long and costly war against the Soviet Union, Germany’s cruel and nightmarish rule over Europe seems outwardly secure, but as Hitler grows old and ill, instability and rebellion threaten to shake this ‘New Order’ apart. At the same time, the ripples caused by the fall of Europe roll across the globe changing the course of history, with European colonial empires falling and a rising Chinese Republic eager to fill the vacuum left by a defeated Japan. Though the memory of war lies fresh in the memories of everyone, the status quo cannot hold for long…</i>
+    <br><br>
+    Thousand Week Reich is an alternate history mod for the real-time strategy (RTS) game Hearts of Iron 4 that attempts to bring a sense of grounded, gritty realism to the age-old trope of an Axis 'victory' in the Second World War. Originally based on a series of maps by digital artist AP246/Proximexo, the TWR mod aims to explore a more grounded and ‘realistic’ version of the trope of a victorious Nazi Germany. Enter the world of TWR in 1952 and fight to hold onto the disintegrating remains of German ‘New Order’ or rise up to the task of defeating the oppressor and liberating Europe from Nazi tyranny.
+  </p>
+</main>
+
+<footer>
+  <div class="copyright">©Quandale Dingle Productions</div>
+
+  <nav class="nav">
+    <a href=".//public/map_page.html" class="nav-button">Map</a>
+    <a href="../WDProjLithiumFranciscoKasilag/public/factions_page.html" class="nav-button">Factions</a>
+    <a href="../WDProjLithiumFranciscoKasilag/public/cities_page.html" class="nav-button">Cities</a>
+    <a href="../WDProjLithiumFranciscoKasilag/public/tech_page.html" class="nav-button">Tech</a>
+    <a href="../WDProjLithiumFranciscoKasilag/public/sources_page.html" class="nav-button">Sources</a>
+  </nav>
+</footer>
+
+</body>
+</html>
