@@ -54,24 +54,19 @@ header img {
 
 footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start; 
-  gap: 50px;
+  
   border-top: 6px solid #444;
-  padding: 0 3vw;
-  height: 90px;
-}
-
-
-footer .copyright {
-  color: #bbb;
-  font-size: 26px;
-  font-weight: 800;
+  padding: 20px 6vw;
+  gap: 16px;
+  height: auto;
 }
 
 .nav {
   display: flex;
   gap: 16px;
+  justify-content: center;
 }
 
 .nav a.nav-button {
@@ -94,6 +89,13 @@ footer .copyright {
   background: #444;
   color: #fff;
 }
+
+footer .copyright {
+  color: #bbb;
+  font-size: 26px;
+  font-weight: 800;
+  text-align: center;
+}
 </style>
 </head>
 
@@ -112,15 +114,15 @@ footer .copyright {
 </main>
 
 <footer>
-  <div class="copyright">©Quandale Dingle Productions</div>
 
   <nav class="nav">
-    <a href=".//public/map_page.html" class="nav-button">Map</a>
-    <a href="../WDProjLithiumFranciscoKasilag/public/factions_page.html" class="nav-button">Factions</a>
-    <a href="../WDProjLithiumFranciscoKasilag/public/cities_page.html" class="nav-button">Cities</a>
-    <a href="../WDProjLithiumFranciscoKasilag/public/tech_page.html" class="nav-button">Tech</a>
-    <a href="../WDProjLithiumFranciscoKasilag/public/sources_page.html" class="nav-button">Sources</a>
+    <a href="map_page.html" class="nav-button">Map</a>
+    <a href="blocs_page.html" class="nav-button">Blocs</a>
+    <a href="cities_page.html" class="nav-button">Cities</a>
+    <a href="tech_page.html" class="nav-button">Tech</a>
+    <a href="sources_page.html" class="nav-button">Sources</a>
   </nav>
+  <div class="copyright">©Quandale Dingle Productions</div>
 </footer>
 
 </body>

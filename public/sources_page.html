@@ -49,13 +49,12 @@ h1 {
   font-size: 64px;
   font-weight: 800;
   margin-bottom: 50px;
-  position: relative;
-  z-index: 2;
+
 }
 
 .sources-grid {
   position: relative;
-  z-index: 2;
+  
   display: flex;
   justify-content: space-between;
   padding: 0 6vw;
@@ -69,17 +68,14 @@ h1 {
 
 footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  gap: 50px;
+
   border-top: 6px solid #444;
-  padding: 0 1vw;
-  height: 90px;
-}
-footer .copyright {
-  color: #bbb;
-  font-size: 26px;
-  font-weight: 800;
+  padding: 20px 6vw;
+  gap: 16px;
+  height: auto;
+
 }
 
 
@@ -87,6 +83,7 @@ footer .copyright {
 .nav {
   display: flex;
   gap: 16px;
+  justify-content: center;
 }
 
 .nav a.nav-button {
@@ -109,13 +106,20 @@ footer .copyright {
   background: #444;
   color: #fff;
 }
+
+footer .copyright {
+  color: #bbb;
+  font-size: 26px;
+  font-weight: 800;
+  text-align: center;
+}
 </style>
 </head>
 
 <body>
 
 <header class="topbar">
-  <a href="/WDProjLithiumFranciscoKasilag/index.html" class="logo-container" aria-label="Back to home">
+  <a href="/WDProjLithiumFranciscoKasilag/index.html" class="logo-container">
     <img src="assets/Logo.png" alt="Home Logo">
   </a>
 </header>
@@ -125,24 +129,24 @@ footer .copyright {
 
   <section class="sources-grid">
     <ul class="left">
-      <li>Source</li>
-      <li>Source</li>
+      <li>Source 1</li>
+      <li>Source 2</li>
     </ul>
     <ul class="right">
-      <li>Source</li>
-      <li>Source</li>
+      <li>Source 3</li>
+      <li>Source 4</li>
     </ul>
   </section>
 </main>
 
 <footer>
   <nav class="nav">
-    <a href="../public/map_page.html" class="nav-button">Map</a>
-    <a href="../public/factions_page.html" class="nav-button">Factions</a>
-    <a href="../public/cities_page.html" class="nav-button">Cities</a>
-    <a href="../public/tech_page.html" class="nav-button">Tech</a>
+    <a href="map_page.html" class="nav-button">Map</a>
+    <a href="blocs_page.html" class="nav-button">Blocs</a>
+    <a href="cities_page.html" class="nav-button">Cities</a>
+    <a href="tech_page.html" class="nav-button">Tech</a>
   </nav>
-  <br>
+
   <div class="copyright">©Quandale Dingle Productions</div>
 
 </footer>
