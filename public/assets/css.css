@@ -31,12 +31,10 @@ header img, .logo-container img {
 }
 
 .hero {
-  position: relative;
-  padding: 40x 6vw 100px;
-  min-height: 600px;
-  overflow: hidden;
-  text-align: center;
+  padding: 40px 6vw;  /* top/bottom = 40px, left/right = 6vw */
+  min-height: auto;
 }
+
 
 .hero p {
   font-size: 20px;
