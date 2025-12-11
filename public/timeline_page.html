@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>WW2 Timeline</title>
+<link rel="stylesheet" href="assets/css.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <a href="../index.html" class="logo-container">
+    <img src="assets/Logo.png" alt="Home Logo">
+  </a>
+</header>
+
+<main class="timeline-hero">
+
+  <button id="prev" class="side-button">←</button>
+
+  <div class="timeline-wrapper">
+    <h1 id="year" class="timeline-year">1939</h1>
+    <p id="event" class="timeline-event">
+      Germany invades Poland, beginning the Second World War.
+    </p>
+
+    <div class="timeline-line" id="timeline-line"></div>
+  </div>
+
+  <button id="next" class="side-button">→</button>
+
+</main>
+
+<footer>
+  <nav class="nav">
+    <a href="map_page.html" class="nav-button">Map</a>
+    <a href="factions_page.html" class="nav-button">Factions</a>
+    <a href="cities_page.html" class="nav-button">Cities</a>
+    <a href="tech_page.html" class="nav-button">Tech</a>
+    <a href="sources_page.html" class="nav-button">Sources</a>
+  </nav>
+  <div class="copyright">©Quandale Dingle Productions</div>
+</footer>
+
+<script>
+const timeline = [
+  {year: "1939", event: "Info(im too lazy1)"},
+  {year: "1940", event: "Info(im too lazy2)"},
+  {year: "1941", event: "Info(im too lazy3)"},
+  {year: "1942", event: "Info(im too lazy4)"},
+  {year: "1943", event: "Info(im too lazy5)"},
+  {year: "1944", event: "Info(im too lazy6)"},
+  {year: "1945", event: "Info(im too lazy7)"}
+];
+
+let index = 0;
+
+const timelineLine = document.getElementById("timeline-line");
+
+function generateDots() {
+  timelineLine.innerHTML = "";
+  timeline.forEach((item, i) => {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dot.dataset.index = i;
+    dot.title = item.year;
+    dot.onclick = () => {
+      index = i;
+      updateTimeline();
+    };
+    timelineLine.appendChild(dot);
+  });
+}
+
+function updateTimeline() {
+  document.getElementById("year").textContent = timeline[index].year;
+  document.getElementById("event").textContent = timeline[index].event;
+
+  document.querySelectorAll(".dot").forEach((dot, i) => {
+    dot.classList.toggle("active-dot", i === index);
+  });
+
+  document.getElementById("prev").style.visibility = index === 0 ? "hidden" : "visible";
+  document.getElementById("next").style.visibility = index === timeline.length - 1 ? "hidden" : "visible";
+}
+
+document.getElementById("next").onclick = () => {
+  if (index < timeline.length - 1) index++;
+  updateTimeline();
+};
+
+document.getElementById("prev").onclick = () => {
+  if (index > 0) index--;
+  updateTimeline();
+};
+
+generateDots();
+updateTimeline();
+</script>
+
+</body>
+</html>
