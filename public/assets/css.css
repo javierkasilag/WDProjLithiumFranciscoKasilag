@@ -105,3 +105,25 @@ footer .copyright {
   font-weight: 800;
   text-align: center;
 }
+
+p {
+  text-align: justify;
+}
+
+p.factionText, li.factionMemberList {
+  font-size: 1.3rem;
+  text-align: justify;
+}
+
+div.faction {
+  border: 5px solid #444;
+  padding: 30px;
+  margin: 40px 6vw;
+}
+
+.factionFlag {
+  display: block;
+  margin: auto;
+  height: 300px;
+  width: auto;
+}
