@@ -25,6 +25,11 @@ body {
   justify-content: center;
 }
 
+#fullLogo {
+  display: flex;
+  justify-content: center;
+}
+
 .logo-container img {
   max-width: 400px;
   cursor: pointer;
@@ -130,6 +135,14 @@ div.faction {
   height: 300px;
   width: auto;
 }
+
+.factionImage {
+  float: right;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  height: auto;
+}
+
 .timeline-hero {
   display: flex;
   justify-content: space-between;
