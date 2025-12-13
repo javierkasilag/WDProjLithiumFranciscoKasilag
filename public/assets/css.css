@@ -118,7 +118,7 @@ p {
   text-align: justify;
 }
 
-p.factionText, li.factionMemberList {
+p.infoboxText, li.factionMemberList {
   font-size: 1.3rem;
   text-align: justify;
 }
@@ -139,6 +139,13 @@ div.infobox {
 .factionImage {
   float: right;
   margin-left: 30px;
+  margin-bottom: 20px;
+  height: auto;
+}
+
+.cityImage {
+  float: left;
+  margin-right: 30px;
   margin-bottom: 20px;
   height: auto;
 }
