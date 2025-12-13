@@ -46,14 +46,19 @@
 
 <script>
 const timeline = [
-  {year: "1939", event: "Info(im too lazy1)"},
-  {year: "1940", event: "Info(im too lazy2)"},
-  {year: "1941", event: "Info(im too lazy3)"},
-  {year: "1942", event: "Info(im too lazy4)"},
-  {year: "1943", event: "Info(im too lazy5)"},
-  {year: "1944", event: "Info(im too lazy6)"},
-  {year: "1945", event: "Info(im too lazy7)"}
+  {year: "1939", event: "<p>World War 2 begins with the Polish rejection of the Reich's demands over Danzig. Poland quickly falls due to the double invasion by the Soviet Union and Germany.</p><p>The invasion shocks Europe, and the world braces for a long conflict.</p>"},
+  {year: "1940", event: `
+    <p>Germany turns west to the lowlands and France, and executes its Blitzkrieg, quickly capitulating Belgium, Luxembourg, and the Netherlands with relatively few casualties. The French were surprised by this invasion, as their defenses were centered on the region of Alsace-Lorraine. The British Expeditionary Forces, alongside French troops, were encircled in the city of Dunkirk, and Germany either killed or captured 200-300k troops as POWs.</p>
+    <br>
+    <p>Paris soon falls, and France surrenders to the German Reich. This devastates the British public, leading to Churchill's removal. The new Prime Minister signs an armistice with Germany, although the Middle East and African Theatres remain active. Denmark and Norway were also captured during this campaign.</p>
+  `},
+  {year: "1941", event: "<p>Info (lazy placeholder)</p>"},
+  {year: "1942", event: "<p>Info (lazy placeholder)</p>"},
+  {year: "1943", event: "<p>Info (lazy placeholder)</p>"},
+  {year: "1944", event: "<p>Info (lazy placeholder)</p>"},
+  {year: "1945", event: "<p>Info (lazy placeholder)</p>"}
 ];
+
 
 let index = 0;
 
@@ -76,7 +81,7 @@ function generateDots() {
 
 function updateTimeline() {
   document.getElementById("year").textContent = timeline[index].year;
-  document.getElementById("event").textContent = timeline[index].event;
+  document.getElementById("event").innerHTML = timeline[index].event;
 
   document.querySelectorAll(".dot").forEach((dot, i) => {
     dot.classList.toggle("active-dot", i === index);
