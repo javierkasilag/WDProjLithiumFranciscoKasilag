@@ -230,3 +230,28 @@ div.infobox {
   background: #444;
   color: #fff;
 }
+.tech-image-box {
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+.tech-image-box.left {
+  float: left;
+  margin-right: 40px;
+}
+
+.tech-image-box.right {
+  float: right;
+  margin-left: 40px;
+}
+
+.tech-image-box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.infobox::after {
+  content: "";
+  display: block;
+  clear: both;
+}
