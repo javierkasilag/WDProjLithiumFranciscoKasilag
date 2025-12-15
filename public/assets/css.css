@@ -41,8 +41,8 @@ header, footer {
 
 .hero, .timeline-hero {
   position: relative;
-  padding: 40px 6vw 100px;
-  min-height: 600px;
+  padding: 30px 6vw 80px;
+  min-height: 500px;
   text-align: center;
 }
 
@@ -55,7 +55,7 @@ header, footer {
 h1 {
   font-size: 64px;
   font-weight: 800;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .sources-grid {
@@ -149,23 +149,22 @@ div.infobox {
   height: auto;
 }
 
-
 .timeline-hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 4vw 100px;
-  min-height: 500px;
+  padding: 20px 4vw 60px;
+  min-height: 400px;
   flex-wrap: wrap;
 }
 
 .side-button {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border: 4px solid #444;
   background: black;
   color: white;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 800;
   cursor: pointer;
 }
@@ -184,28 +183,28 @@ div.infobox {
 }
 
 .timeline-year {
-  font-size: 72px;
+  font-size: 65px;
   font-weight: 800;
-  margin: 10px 0 15px;
+  margin: 5px 0 5px;
   text-align: center;
   width: 100%;
 }
 
 .timeline-event {
-  font-size: 1.4rem;
-  width: 85%;
-  margin: 0 auto 20px;
+  font-size: 1.3rem;
+  width: 90%;
+  margin: 0 auto 10px;
   text-align: justify;
 }
 
 .timeline-line {
   width: 100%;
-  height: 40px;
+  height: 30px;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px; 
+  margin-top: 15px;
 }
 
 .timeline-line::before {
@@ -215,16 +214,16 @@ div.infobox {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  height: 6px;
+  height: 5px;
   background: #444;
   z-index: 0;
 }
 
 .dot {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   background: black;
-  border: 4px solid #444;
+  border: 3px solid #444;
   border-radius: 50%;
   cursor: pointer;
   z-index: 1;
@@ -239,7 +238,6 @@ div.infobox {
   display: block;
   clear: both;
 }
-
 
 body.tech-page .tech-page-grid {
   display: grid;
@@ -289,8 +287,8 @@ body.tech-page .tech-card-content p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; 
-  margin-bottom: 30px;
+  gap: 12px;
+  margin-bottom: 15px;
   width: 100%;
 }
 
@@ -298,11 +296,11 @@ body.tech-page .tech-card-content p {
   max-width: 100%;
   height: auto;
   border: 3px solid #444;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #0ff inset;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0ff inset;
   opacity: 0;
   transition: opacity 0.6s ease-in-out;
-  max-height: 400px;
+  max-height: 350px;
   object-fit: cover;
 }
 
@@ -320,25 +318,24 @@ body.tech-page .tech-card-content p {
   .timeline-event-container {
     flex-direction: row;
     align-items: flex-start;
-    gap: 30px; 
+    gap: 20px;
   }
 
   .timeline-event-container img {
-    max-width: 400px;
-    max-height: 300px;
+    max-width: 350px;
+    max-height: 250px;
   }
 
   .timeline-event-container p {
     flex: 1;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .timeline-hero {
-    padding: 20px 4vw 80px;
-    min-height: 400px;
+    padding: 15px 4vw 50px;
+    min-height: 350px;
   }
   
   .timeline-wrapper {
@@ -346,28 +343,34 @@ body.tech-page .tech-card-content p {
   }
   
   .timeline-year {
-    font-size: 52px;
-    margin: 5px 0 10px;
+    font-size: 45px;
+    margin: 3px 0 5px;
   }
   
   .side-button {
-    width: 60px;
-    height: 60px;
-    font-size: 36px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
   }
   
   .timeline-event {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     width: 95%;
-    margin: 0 auto 15px;
+    margin: 0 auto 8px;
   }
   
   .timeline-line {
-    margin-top: 25px;
+    margin-top: 12px;
+    height: 25px;
   }
   
   .timeline-event-container {
-    gap: 15px;
-    margin-bottom: 25px;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .dot {
+    width: 18px;
+    height: 18px;
   }
 }
