@@ -10,11 +10,12 @@
   margin: 0;
   padding: 0;
   font-family: 'VCR OSD Mono', monospace;
+  color: white
+  
 }
 
 body {
-  background: #fff;
-  color: #111;
+  background-color: black;
   line-height: 1.6;
 }
 
@@ -93,11 +94,11 @@ footer {
   width: 120px;
   height: 64px;
   border: 3px solid #444;
-  background: #fff;
+  background: #000000;
   font-size: 22px;
   font-weight: 800;
   text-decoration: none;
-  color: #111;
+  color: #ffffff;
   font-family: 'VCR OSD Mono', monospace;
   cursor: pointer;
 }
@@ -127,6 +128,7 @@ div.infobox {
   border: 5px solid #444;
   padding: 30px;
   margin: 40px 6vw;
+  background: black;
 }
 
 .factionFlag {
