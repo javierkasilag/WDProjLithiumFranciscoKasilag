@@ -239,11 +239,14 @@ div.infobox {
   clear: both;
 }
 
+/* Tech Page Grid */
 body.tech-page .tech-page-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding: 40px 6vw;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 body.tech-page .tech-card {
@@ -261,45 +264,37 @@ body.tech-page .tech-card:hover {
 }
 
 body.tech-page .tech-card-image {
-  height: 300px;
+  height: 250px;
   background-size: cover;
   background-position: center;
 }
 
 body.tech-page .tech-card-content {
-  padding: 24px;
+  padding: 20px;
 }
 
 body.tech-page .tech-card-content h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 16px;
   color: #0ff;
 }
 
 body.tech-page .tech-card-content p {
-  font-size: 1.3rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.5;
   text-align: justify;
   color: #fff;
 }
 
-.timeline-event-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
-  width: 100%;
-}
-
+/* Timeline Event Images Glow */
 .timeline-event-container img {
   max-width: 100%;
   height: auto;
-  border: 3px solid #444;
   border-radius: 10px;
-  box-shadow: 0 0 15px #0ff inset;
+  box-shadow: 0 0 10px #0ff; /* subtle cyan glow */
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  transform: scale(0.98);
+  transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
   max-height: 350px;
   object-fit: cover;
 }
@@ -309,9 +304,27 @@ body.tech-page .tech-card-content p {
   transition: opacity 0.6s ease-in-out;
 }
 
-.timeline-event-container.show img,
+.timeline-event-container.show img {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .timeline-event-container.show p {
   opacity: 1;
+}
+
+.timeline-event-container img:hover {
+  box-shadow: 0 0 15px #0ff;
+  transform: scale(1.02);
+}
+
+.timeline-event-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 @media screen and (min-width: 900px) {
@@ -337,40 +350,45 @@ body.tech-page .tech-card-content p {
     padding: 15px 4vw 50px;
     min-height: 350px;
   }
-  
+
   .timeline-wrapper {
     width: 85%;
   }
-  
+
   .timeline-year {
     font-size: 45px;
     margin: 3px 0 5px;
   }
-  
+
   .side-button {
     width: 50px;
     height: 50px;
     font-size: 30px;
   }
-  
+
   .timeline-event {
     font-size: 1.1rem;
     width: 95%;
     margin: 0 auto 8px;
   }
-  
+
   .timeline-line {
     margin-top: 12px;
     height: 25px;
   }
-  
+
   .timeline-event-container {
     gap: 10px;
     margin-bottom: 12px;
+    flex-direction: column;
   }
-  
-  .dot {
-    width: 18px;
-    height: 18px;
+
+  .timeline-event-container img {
+    max-width: 100%;
+    max-height: 250px;
+  }
+
+  .timeline-event-container p {
+    font-size: 1.1rem;
   }
 }
