@@ -5,11 +5,12 @@ const timeline = [
     <br>
     <p>Paris soon falls, and France surrenders to the German Reich. This devastates the British public, leading to Churchill's removal. The new Prime Minister signs an armistice with Germany, although the Middle East and African Theatres remain active. Denmark and Norway were also captured during this campaign.</p>
   `},
-  {year: "1941", event: "<p> Operation Barbarossa / the invasion of the Soviet Union by the Germans and Pearl Harbor happen as usual, Japan however does worse during the Pacific War because the Allies aren't fighting in Europe. Japan is still able to take Indochina(Vietnam, Cambodia, Laos), but struggles to take the rest of SEA.</p>"},
-  {year: "1942", event: "<p>The Germans quickly advance into the Soviet Union, taking key cities such as Kiev, Minsk, and Odessa, but pushes halt due weather conditions. The war in China is still ongoing with the Empire of Japan gaining some ground.</p>"},
-  {year: "1943", event: "<p> The French goverment in exile consolidates its land in West and Central Africa, as thee German puppet state takes control of Algeria, France's North African colony. The Germans at the gates of Mosvow, and the battlee for Moscwo begins.</p>"},
-  {year: "1944", event: "<p>Moscow is captured, and Stalin disappears. By the beginning of 1945, the Germans mostly achieve their European goals and the fighting mostly stops, although no peace treaty is ever signed. Revolution in India sparked by the Bengal Famine begins, led by Subhas Chandra Bose. Henry A Wallace stays as Roosevelt's VP instead of being replaced by Truman.</p>"},
-  {year: "1945", event: "<p> Henry Wallace becomes President after Roosevelt's death. American invasion of Siberia begins after Japan refuses surrender, Operation Olympic commences with an invasion of Kyushu followed by the atomic bombings of Hiroshima, Nagasaki, Kokura, and Yokohama. Japan  sues for peace.</p>"}
+  {year: "1941", event: "<p> Operation Barbarossa / the invasion of the Soviet Union by the Germans, and Pearl Harbor happened as usual. Japan did worse during the Pacific War because the Allies weren't fighting in Europe. Japan is still able to take Indochina(Vietnam, Cambodia, Laos), but struggles to take the rest of SEA.</p>"},
+  {year: "1942", event: "<p> The Germans quickly advance into the Soviet Union, taking key cities such as Kiev, Minsk, and Odessa, but their advance halts due to weather conditions. The war in China is still ongoing, with the Empire of Japan gaining some ground.</p>"},
+  {year: "1943", event: "<p> The French government in exile consolidates its land in West and Central Africa, as the German puppet state takes control of Algeria, France's North African colony. The Germans are at the gates of Moscow, and the battle for Moscow begins.</p>"},
+  {year: "1944", event: "<p> Moscow is captured, and Stalin disappears. By the beginning of 1945, the Germans had mostly achieved their European goals, and the fighting had mostly stopped, although no peace treaty was ever signed. The revolution in India, sparked by the Bengal Famine, began, led by Subhas Chandra Bose. Henry A Wallace stayed as Roosevelt's VP instead of being replaced by Truman.</p>"},
+  {year: "1945", event: "<p> Henry Wallace became President after Roosevelt's death. The American invasion of Siberia begins after Japan refuses to surrender. Operation Olympic commences with an invasion of Kyushu, followed by the atomic bombings of Hiroshima, Nagasaki, Kokura, and Yokohama. Japan sues for peace.</p>"}
+
 ];
 
 
