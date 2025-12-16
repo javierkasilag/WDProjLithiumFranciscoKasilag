@@ -125,6 +125,6 @@ document.getElementById("prev").onclick = () => {
   updateTimeline();
 };
 
-
+c
 generateDots();
 updateTimeline();
