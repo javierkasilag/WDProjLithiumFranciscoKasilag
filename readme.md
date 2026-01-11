@@ -1,4 +1,4 @@
-![Home](https://github.com/user-attachments/assets/4b3aff20-90f4-4807-8acf-09c1ccb21017)# LiFrancisco / LiKasilag PROJECT PROPOSAL
+# LiFrancisco / LiKasilag PROJECT PROPOSAL
 ## Thousand Week Reich: An Alternate History Scenario
 ******
 ### Logo:
