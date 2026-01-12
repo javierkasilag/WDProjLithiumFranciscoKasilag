@@ -20,18 +20,21 @@ A year-by-year timeline of WW2 as it happened in the TWR timeline, detailing maj
 #### P3 (Factions):
 A description of each of the major and minor geopolitical factions of TWR, again as of the in-game start date, detailing everything from member nations to socioeconomic issues confronting the factions.
 #### P4 (Cities):
-A description of some major and minor cities per bloc or important country. Will include appropriate images of the cities as they were in real life or alternate versions thereof, with corresponding fictional information.
+A description of some major and minor cities per bloc or important country. Includes appropriate images of the cities as they were in real life or alternate versions thereof, with corresponding fictional information.
 #### P5 (Tech):
 An overview of some of the major technological advancements relevant to this timeline.
 #### P6 (Sources):
 A list of all the sources and media used for the project.
-#### P7 (Comments):
+#### P7 (Comment Board):
+A page where comments will be displayed, visible for both us the site developers and others who browse through our website.
+#### P8 (Comment Input):
+An interface for inputting and posting comments (suggestions for the website, such as content/lore to add or additions to the site's design). Will use HTML forms to store comment information, both comments in-themselves and the tags to label them under (e.g. Lore, Design, Site Errors, etc.).
+#### P9 (Comment Stats):
+An analytical page for showing the statistics of users, such as number of comments sent overall, number of comments sent per suggestion tage
 
 ******
 
 ### Wireframes:
-#### Home:
-
 #### Home:
 <img width="1920" height="1080" alt="Home" src="https://github.com/user-attachments/assets/7400bb7f-fb0e-4f66-8cc5-b67902e05812" />
 
@@ -39,7 +42,7 @@ A list of all the sources and media used for the project.
 <img width="1920" height="1080" alt="Map" src="https://github.com/user-attachments/assets/6601ca55-9129-45ad-a0ae-c51cd8110849" />
 
 #### P2 (Timeline):
-<img width="1920" height="1080" alt="Timeline" src="https://github.com/user-attachments/assets/bc0fa73e-ac25-4ffc-91a4-df17fca3163c" />
+<img width="1920" height="1080" alt="Timeline" src="https://github.com/user-attachments/assets/a35e851d-d614-4e96-8390-be4b002ce8df" />
 
 #### P3 (Factions):
 <img width="1920" height="1080" alt="Factions" src="https://github.com/user-attachments/assets/d6f9662e-3eae-4fcb-91a7-c88c79febdbc" />
@@ -53,6 +56,11 @@ A list of all the sources and media used for the project.
 #### P6 (Sources):
 <img width="1920" height="1080" alt="Sources" src="https://github.com/user-attachments/assets/40f876d6-354e-479f-b2b5-b9a8530f5165" />
 
-#### P7 (Comments):
-<img width="1920" height="1080" alt="Comments" src="" />
+#### P7 (Comment Board):
+<img width="1920" height="1080" alt="Comment Board" src="https://github.com/user-attachments/assets/85db98b4-c271-427d-acc7-8c25853c21ce" />
 
+#### P8 (Comment Input):
+<img width="1920" height="1080" alt="Comment Input" src="https://github.com/user-attachments/assets/1c386611-0a3c-4ff5-9847-afca3d2303a5" />
+
+#### P9 (Comment Stats):
+<img width="1920" height="1080" alt="Comment Stats" src="" />
