@@ -28,9 +28,9 @@ A list of all the sources and media used for the project.
 #### P7 (Comment Board):
 A page where comments will be displayed, visible for both us the site developers and others who browse through our website.
 #### P8 (Comment Input):
-An interface for inputting and posting comments (suggestions for the website, such as content/lore to add or additions to the site's design). Will use HTML forms to store comment information, both comments in-themselves and the tags to label them under (e.g. Lore, Design, Site Errors, etc.).
+An interface for inputting and posting comments (suggestions for the website, such as content/lore to add or additions to the site's design). Will use HTML forms to store comment information, namely comments in-themselves and the tags to label them under (e.g. Lore, Design, Site Errors, etc.).
 #### P9 (Comment Stats):
-An analytical page for showing the statistics of users, such as number of comments sent overall, number of comments sent per suggestion tage
+An analytical page for showing the statistics of users, such as number of comments sent overall, number of comments sent per suggestion tag, etc. Will use HTML forms to store user statistics.
 
 ******
 
@@ -63,4 +63,4 @@ An analytical page for showing the statistics of users, such as number of commen
 <img width="1920" height="1080" alt="Comment Input" src="https://github.com/user-attachments/assets/1c386611-0a3c-4ff5-9847-afca3d2303a5" />
 
 #### P9 (Comment Stats):
-<img width="1920" height="1080" alt="Comment Stats" src="" />
+<img width="1920" height="1080" alt="Comment Stats" src="https://github.com/user-attachments/assets/2a5be273-13b0-41f5-97e0-d5e7de7ae91e" />
