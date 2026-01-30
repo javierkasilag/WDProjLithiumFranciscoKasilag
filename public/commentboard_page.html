@@ -12,7 +12,10 @@
   </header>
 
   <main class="comment-feed" id="commentFeed">
-    <div class="action-container"><a href="commentcreator_page.html" class="send-btn">Send a Comment!</a></div>
+    <div class="action-container">
+      <a href="commentstatistics_page.html" class="send-btn" style="border-color: #00eaff; color: #00eaff;">COMMENT STATS</a>
+      <a href="commentcreator_page.html" class="send-btn">WRITE A COMMENT!</a>
+    </div>
   </main>
   
   <div id="terminalModal" class="modal-overlay">
@@ -21,7 +24,7 @@
         <span id="modalMessage" class="modal-message"></span>
         <input type="text" id="modalInput" class="modal-input" placeholder="INPUT REQUIRED...">
         <button id="emojiToggleModal" class="emoji-toggle-btn" style="display:none;" onclick="toggleEmojiPicker('modalEmojiGrid')">😀</button>
-        <div id="modalEmojiGrid" class="emoji-grid" style="bottom: 60px; right: 20px;"></div>
+        <div id="modalEmojiGrid" class="emoji-grid" style="bottom: 80px; right: 40px;"></div>
         <button id="modalActionBtn" class="modal-btn" onclick="handleModalAction()">ACKNOWLEDGE</button>
     </div>
   </div>

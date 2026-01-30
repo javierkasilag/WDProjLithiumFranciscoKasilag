@@ -13,7 +13,7 @@
   
   <main class="creator-main">
     <div class="form-container">
-      <h2 style="text-align: center; margin-bottom: 30px;">TRANSMISSION TERMINAL</h2>
+      <h2 style="text-align: center; margin-bottom: 30px;">COMMENT CREATOR</h2>
       <form onsubmit="saveComment(event)">
         <div class="form-group">
           <label>> ID / EMAIL</label>
@@ -27,7 +27,7 @@
           </button>
         </div>
         <div class="form-group">
-          <label>> SIGNAL TYPE (TAG)</label>
+          <label>> TAG</label>
           <select id="commentTag">
             <option value="BUG/ERROR">BUG/ERROR</option>
             <option value="QUESTION">QUESTION</option>
@@ -41,7 +41,7 @@
           <button type="button" class="emoji-toggle-btn" onclick="toggleEmojiPicker('creatorEmojiGrid')">😀</button>
           <div id="creatorEmojiGrid" class="emoji-grid" style="bottom: -150px; right: 0;"></div>
         </div>
-        <button type="submit" class="submit-btn">SEND TRANSMISSION</button>
+        <button type="submit" class="submit-btn">SEND COMMENT</button>
       </form>
     </div>
   </main>

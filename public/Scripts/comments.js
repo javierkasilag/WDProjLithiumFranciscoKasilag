@@ -30,6 +30,7 @@ function showTerminalNotification(message, type, callback = null) {
     const titleBox = document.getElementById('modalTitle');
     const inputField = document.getElementById('modalInput');
     const actionBtn = document.getElementById('modalActionBtn');
+    const emojiBtn = document.getElementById('emojiToggleModal');
 
     modal.style.display = 'flex';
     msgBox.innerText = message;
@@ -38,6 +39,7 @@ function showTerminalNotification(message, type, callback = null) {
     modal.classList.remove('modal-error', 'modal-success', 'modal-prompt');
     inputField.style.display = 'none';
     inputField.value = '';
+    if(emojiBtn) emojiBtn.style.display = 'none';
 
     if (type === 'error') {
         modal.classList.add('modal-error');
@@ -53,6 +55,10 @@ function showTerminalNotification(message, type, callback = null) {
         inputField.style.display = 'block';
         inputField.focus();
         actionBtn.innerText = "SUBMIT";
+        
+        if (message === "ENTER NEW CONTENT:") {
+             if(emojiBtn) emojiBtn.style.display = 'block';
+        }
     }
 }
 
@@ -227,11 +233,39 @@ function loadComments() {
                     <button class="edit-btn" onclick="editComment(${comment.id})">EDIT</button>
                     <button class="delete-btn" onclick="deleteComment(${comment.id})">DELETE</button>
                 </div>
-                [USER TRANSMISSION] ${comment.text}
+                ${comment.text}
             </div>
         `;
         feed.prepend(card);
     });
+}
+
+function updateStatistics() {
+    const totalEl = document.getElementById('totalComments');
+    if (!totalEl) return;
+
+    const comments = JSON.parse(localStorage.getItem('twr_comments')) || [];
+    
+    const stats = {
+        total: comments.length,
+        bug: 0,
+        question: 0,
+        suggestion: 0,
+        misc: 0
+    };
+
+    comments.forEach(c => {
+        if (c.tag === 'BUG/ERROR') stats.bug++;
+        else if (c.tag === 'QUESTION') stats.question++;
+        else if (c.tag === 'SUGGESTION') stats.suggestion++;
+        else stats.misc++;
+    });
+
+    document.getElementById('totalComments').innerText = stats.total;
+    document.getElementById('tagBug').innerText = stats.bug;
+    document.getElementById('tagQuestion').innerText = stats.question;
+    document.getElementById('tagSuggestion').innerText = stats.suggestion;
+    document.getElementById('tagMisc').innerText = stats.misc;
 }
 
 document.addEventListener('DOMContentLoaded', loadComments);
