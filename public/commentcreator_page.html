@@ -3,23 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TWR — Transmission Terminal">
+  <meta name="author" content="Noah Connor C. Francisco, Edgardo Javier D. Kasilag III">
   <title>TWR — Create Comment</title>
   <link rel="stylesheet" href="../public/assets/css.css">
   <style>
-
     .creator-main {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 70vh;
     }
+
     .form-container {
       width: 500px;
       border: 5px solid #444;
-      padding: 30px;
-      background: black;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.95);
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.1) inset;
     }
 
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 800;
+      color: #00eaff;
+      font-size: 0.9rem;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      background: #000;
+      border: 3px solid #444;
+      padding: 12px;
+      font-family: 'VCR OSD Mono', monospace;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input[type="text"]:focus, textarea:focus {
+      border-color: #00eaff;
+      box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 18px;
+      background: black;
+      border: 3px solid #444;
+      color: white;
+      font-family: 'VCR OSD Mono', monospace;
+      font-weight: 800;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .submit-btn:hover {
+      color: #00eaff;
+      border-color: #00eaff;
+      box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+    }
   </style>
 </head>
 
@@ -32,18 +81,18 @@
 
   <main class="creator-main">
     <div class="form-container">
-      <h2 style="text-align: center; margin-bottom: 20px;">Transmission Terminal</h2>
+      <h2 style="text-align: center; margin-bottom: 30px; letter-spacing: 2px;">TRANSMISSION TERMINAL</h2>
       
       <form onsubmit="saveComment(event)">
         <div class="form-group">
-          <label>ID / USERNAME</label>
-          <input type="text" id="usernameInput" placeholder="Enter identification..." required>
+          <label>> IDENTIFICATION / USERNAME</label>
+          <input type="text" id="usernameInput" placeholder="Enter ID string..." required>
         </div>
         <div class="form-group">
-          <label>MESSAGE CONTENT</label>
-          <textarea id="commentTextArea" rows="6" placeholder="Type your comment here..." required></textarea>
+          <label>> MESSAGE PACKET</label>
+          <textarea id="commentTextArea" rows="6" placeholder="Awaiting input..." required></textarea>
         </div>
-        <button type="submit" class="submit-btn">POST COMMENT</button>
+        <button type="submit" class="submit-btn">SEND TRANSMISSION</button>
       </form>
     </div>
   </main>

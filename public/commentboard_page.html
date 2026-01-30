@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TWR — Comment Board">
+  <meta name="author" content="Noah Connor C. Francisco, Edgardo Javier D. Kasilag III">
   <title>TWR — Comment Board</title>
   <link rel="stylesheet" href="../public/assets/css.css">
   <style>
-
     .comment-board-body {
       background-image: 
         linear-gradient(45deg, transparent 49%, #111 50%, transparent 51%),
@@ -16,6 +17,7 @@
       display: flex;
       flex-direction: column;
     }
+
     .comment-feed {
       flex: 1;
       display: flex;
@@ -25,6 +27,7 @@
       padding: 50px 0;
       position: relative;
     }
+
     .comment-card {
       width: 60%;
       border: 5px solid #444;
@@ -32,13 +35,75 @@
       padding: 20px;
     }
 
-    .timestamp {
-      font-size: 0.8rem;
-      color: #00eaff;
-      margin-left: auto;
-      opacity: 0.7;
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
     }
 
+    .profile-circle {
+      width: 35px;
+      height: 35px;
+      border: 3px solid #444;
+      border-radius: 50%;
+    }
+
+    .username-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #00eaff;
+    }
+
+    .comment-box {
+      border: 3px solid #444;
+      padding: 15px;
+      min-height: 80px;
+      text-align: justify;
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .delete-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: none;
+      border: 1px solid #444;
+      color: #ff4444;
+      font-family: 'VCR OSD Mono', monospace;
+      cursor: pointer;
+      font-size: 0.7rem;
+      padding: 2px 5px;
+    }
+
+    .delete-btn:hover {
+      background: #ff4444;
+      color: black;
+    }
+
+    .action-container {
+      width: 60%;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+
+    .send-btn {
+      padding: 12px 24px;
+      text-decoration: none;
+      border: 3px solid #444;
+      background: black;
+      font-weight: 800;
+      color: white;
+      transition: all 0.25s ease;
+    }
+
+    .send-btn:hover {
+      color: #00eaff;
+      transform: scale(1.08);
+      box-shadow: 0 0 14px rgba(0, 234, 255, 0.4);
+    }
   </style>
 </head>
 
@@ -50,14 +115,13 @@
   </header>
 
   <main class="comment-feed" id="commentFeed">
-    
     <div class="comment-card">
       <div class="user-info">
         <div class="profile-circle"></div>
-        <span class="username-text">SYSTEM_ADMIN</span>
+        <span class="username-text">SYSTEM_NODE_ALPHA</span>
       </div>
       <div class="comment-box">
-        [ENCRYPTED] Welcome to the Toronto Pact public frequency. Keep transmissions brief.
+        [ENCRYPTED] Welcome to the Toronto Pact frequency. All transmissions are logged for historical accuracy.
       </div>
     </div>
 
