@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TWR — Comment Board</title>
+  <link rel="stylesheet" href="../public/assets/css.css">
+  <style>
+
+    .comment-board-body {
+      background-image: 
+        linear-gradient(45deg, transparent 49%, #111 50%, transparent 51%),
+        linear-gradient(-45deg, transparent 49%, #111 50%, transparent 51%);
+      background-size: 100% 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .comment-feed {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      padding: 50px 0;
+      position: relative;
+    }
+    .comment-card {
+      width: 60%;
+      border: 5px solid #444;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+    }
+
+    .timestamp {
+      font-size: 0.8rem;
+      color: #00eaff;
+      margin-left: auto;
+      opacity: 0.7;
+    }
+
+  </style>
+</head>
+
+<body class="comment-board-body">
+  <header class="topbar">
+    <a href="../index.html" class="logo-container">
+      <img src="assets/Logo.png" alt="Home Logo">
+    </a>
+  </header>
+
+  <main class="comment-feed" id="commentFeed">
+    
+    <div class="comment-card">
+      <div class="user-info">
+        <div class="profile-circle"></div>
+        <span class="username-text">SYSTEM_ADMIN</span>
+      </div>
+      <div class="comment-box">
+        [ENCRYPTED] Welcome to the Toronto Pact public frequency. Keep transmissions brief.
+      </div>
+    </div>
+
+    <div class="action-container">
+      <a href="commentcreator_page.html" class="send-btn">Send a Comment!</a>
+    </div>
+  </main>
+
+  <footer>
+    <nav class="nav">
+      <a href="map_page.html" class="nav-button">Map</a>
+      <a href="timeline_page.html" class="nav-button">Timeline</a>
+      <a href="factions_page.html" class="nav-button">Factions</a>
+      <a href="cities_page.html" class="nav-button">Cities</a>
+      <a href="tech_page.html" class="nav-button">Tech</a>
+      <a href="commentboard_page.html" class="nav-button active-page">Comments</a>
+      <a href="sources_page.html" class="nav-button">Sources</a>
+    </nav>
+    <div class="copyright">©Quandale Dingle Productions | All Rights Reserved</div>
+  </footer>
+
+  <script src="../public/Scripts/comments.js"></script>
+</body>
+</html>
