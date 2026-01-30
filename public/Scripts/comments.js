@@ -61,17 +61,71 @@ function saveComment(event) {
     }
 
     const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
+
+    // --- SECURITY CHECK ---
+    // Ensure one username = one password forever
+    const userMatch = existingComments.find(c => c.user === identifier);
+    if (userMatch && userMatch.pass !== password) {
+        showTerminalNotification("IDENTITY CONFLICT: INCORRECT PASSWORD FOR THIS USER ID.", "error");
+        return;
+    }
+
     const newComment = {
         id: Date.now(),
         user: identifier,
         pass: password,
         text: commentBody
     };
+
     existingComments.push(newComment);
     localStorage.setItem('twr_comments', JSON.stringify(existingComments));
     
     showTerminalNotification("TRANSMISSION UPLOADED SUCCESSFULLY.", "success", () => {
         window.location.href = 'commentboard_page.html';
+    });
+}
+
+function performDeletion(id) {
+    const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
+    const updatedComments = existingComments.filter(c => c.id !== id);
+    localStorage.setItem('twr_comments', JSON.stringify(updatedComments));
+    
+    document.getElementById('terminalModal').style.display = 'none';
+    setTimeout(() => location.reload(), 100);
+}
+
+function deleteComment(commentId) {
+    // Step 1: Prompt for Access Key (User Password OR Admin Password)
+    showTerminalNotification("ENTER ACCESS KEY TO DELETE:", "prompt", (inputPass) => {
+        const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
+        const commentToDelete = existingComments.find(c => c.id === commentId);
+
+        if (!commentToDelete) return;
+
+        // Check A: Is this the specific password for this comment?
+        if (inputPass === commentToDelete.pass) {
+            performDeletion(commentId);
+        } 
+        // Check B: Is this the Admin Password?
+        else if (inputPass === "thisisaveryverylongadminpasswordthatnoonewillfind") {
+            // Close the current modal to prepare for the ID check
+            document.getElementById('terminalModal').style.display = 'none';
+            
+            // Wait 200ms then ask for Admin ID
+            setTimeout(() => {
+                showTerminalNotification("ENTER ADMIN IDENTIFICATION:", "prompt", (adminId) => {
+                    if (adminId === "noahconnorcfrancisco@gmail.com") {
+                        performDeletion(commentId);
+                    } else {
+                        showTerminalNotification("ADMIN VERIFICATION FAILED.", "error");
+                    }
+                });
+            }, 200);
+        } 
+        // Failure
+        else {
+            showTerminalNotification("ACCESS DENIED: INVALID KEY", "error");
+        }
     });
 }
 
@@ -81,7 +135,6 @@ function editComment(commentId) {
         const index = existingComments.findIndex(c => c.id === commentId);
 
         if (index !== -1 && inputPass === existingComments[index].pass) {
-            // Close auth modal, open input modal (reusing prompt style)
             document.getElementById('terminalModal').style.display = 'none';
             setTimeout(() => {
                 showTerminalNotification("ENTER NEW CONTENT:", "prompt", (newText) => {
@@ -91,33 +144,12 @@ function editComment(commentId) {
                         location.reload();
                     }
                 });
-                // Pre-fill the input with existing text
                 document.getElementById('modalInput').value = existingComments[index].text; 
             }, 200);
         } else {
              showTerminalNotification("ACCESS DENIED: INVALID KEY", "error", () => {
                  document.getElementById('terminalModal').style.display = 'none';
              });
-        }
-    });
-}
-
-function deleteComment(commentId) {
-    showTerminalNotification("ENTER ACCESS KEY TO DELETE:", "prompt", (inputPass) => {
-        const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
-        const commentToDelete = existingComments.find(c => c.id === commentId);
-
-        if (commentToDelete && inputPass === commentToDelete.pass) {
-            const updatedComments = existingComments.filter(c => c.id !== commentId);
-            localStorage.setItem('twr_comments', JSON.stringify(updatedComments));
-            
-            // Close auth modal
-            document.getElementById('terminalModal').style.display = 'none';
-            setTimeout(() => location.reload(), 100);
-        } else {
-            showTerminalNotification("ACCESS DENIED: INVALID KEY", "error", () => {
-                document.getElementById('terminalModal').style.display = 'none';
-            });
         }
     });
 }
