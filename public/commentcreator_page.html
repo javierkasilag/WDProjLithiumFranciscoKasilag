@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TWR — Create Comment</title>
   <link rel="stylesheet" href="../public/assets/css.css">
-  
 </head>
 <body>
   <header class="topbar">
@@ -14,24 +13,35 @@
   
   <main class="creator-main">
     <div class="form-container">
-      <h2 style="text-align: center; margin-bottom: 30px;">COMMENT BOARD</h2>
+      <h2 style="text-align: center; margin-bottom: 30px;">TRANSMISSION TERMINAL</h2>
       <form onsubmit="saveComment(event)">
         <div class="form-group">
-          <label>> USERNAME / EMAIL</label>
+          <label>> ID / EMAIL</label>
           <input type="text" id="userIdentifier" placeholder="Enter identification..." required>
         </div>
         <div class="form-group">
-          <label>> PASSWORD</label>
+          <label>> ACCESS KEY (PASSWORD)</label>
           <input type="password" id="userPassword" placeholder="Set security key..." required>
-          <button type="button" class="toggle-pass" onclick="togglePasswordVisibility()">[SHOW/HIDE]</button>
+          <button type="button" class="toggle-pass" onclick="togglePasswordVisibility()">
+            <img id="eyeIcon" src="assets/closed.png" alt="Toggle Visibility" class="eye-icon">
+          </button>
         </div>
         <div class="form-group">
-          <label>> MESSAGE </label>
+          <label>> SIGNAL TYPE (TAG)</label>
+          <select id="commentTag">
+            <option value="BUG/ERROR">BUG/ERROR</option>
+            <option value="QUESTION">QUESTION</option>
+            <option value="SUGGESTION">SUGGESTION</option>
+            <option value="MISCELLANEOUS">MISCELLANEOUS</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>> MESSAGE PACKET</label>
           <textarea id="commentTextArea" rows="4" placeholder="Awaiting input..." required></textarea>
           <button type="button" class="emoji-toggle-btn" onclick="toggleEmojiPicker('creatorEmojiGrid')">😀</button>
           <div id="creatorEmojiGrid" class="emoji-grid" style="bottom: -150px; right: 0;"></div>
         </div>
-        <button type="submit" class="submit-btn">COMMENT SUBMITTED</button>
+        <button type="submit" class="submit-btn">SEND TRANSMISSION</button>
       </form>
     </div>
   </main>

@@ -13,7 +13,15 @@ const emojiList = [
 
 function togglePasswordVisibility() {
     const passInput = document.getElementById('userPassword');
-    passInput.type = passInput.type === 'password' ? 'text' : 'password';
+    const eyeIcon = document.getElementById('eyeIcon');
+    
+    if (passInput.type === 'password') {
+        passInput.type = 'text';
+        eyeIcon.src = 'assets/open.png';
+    } else {
+        passInput.type = 'password';
+        eyeIcon.src = 'assets/closed.png';
+    }
 }
 
 function showTerminalNotification(message, type, callback = null) {
@@ -22,7 +30,6 @@ function showTerminalNotification(message, type, callback = null) {
     const titleBox = document.getElementById('modalTitle');
     const inputField = document.getElementById('modalInput');
     const actionBtn = document.getElementById('modalActionBtn');
-    const emojiBtn = document.getElementById('emojiToggleModal');
 
     modal.style.display = 'flex';
     msgBox.innerText = message;
@@ -31,7 +38,6 @@ function showTerminalNotification(message, type, callback = null) {
     modal.classList.remove('modal-error', 'modal-success', 'modal-prompt');
     inputField.style.display = 'none';
     inputField.value = '';
-    if(emojiBtn) emojiBtn.style.display = 'none';
 
     if (type === 'error') {
         modal.classList.add('modal-error');
@@ -47,10 +53,6 @@ function showTerminalNotification(message, type, callback = null) {
         inputField.style.display = 'block';
         inputField.focus();
         actionBtn.innerText = "SUBMIT";
-        
-        if (message === "ENTER NEW CONTENT:") {
-             if(emojiBtn) emojiBtn.style.display = 'block';
-        }
     }
 }
 
@@ -108,6 +110,7 @@ function saveComment(event) {
     event.preventDefault();
     const identifier = document.getElementById('userIdentifier').value;
     const password = document.getElementById('userPassword').value;
+    const tag = document.getElementById('commentTag').value;
     const commentBody = document.getElementById('commentTextArea').value;
 
     if (!identifier || !password || !commentBody) {
@@ -126,6 +129,7 @@ function saveComment(event) {
         id: Date.now(),
         user: identifier,
         pass: password,
+        tag: tag,
         text: commentBody
     };
 
@@ -204,10 +208,19 @@ function loadComments() {
     storedComments.forEach(comment => {
         const card = document.createElement('div');
         card.className = 'comment-card';
+        
+        let tagClass = 'tag-misc';
+        if (comment.tag === 'BUG/ERROR') tagClass = 'tag-bug';
+        else if (comment.tag === 'QUESTION') tagClass = 'tag-question';
+        else if (comment.tag === 'SUGGESTION') tagClass = 'tag-suggestion';
+        
+        const displayTag = comment.tag ? `<span class="tag-badge ${tagClass}">${comment.tag}</span>` : '';
+        
         card.innerHTML = `
             <div class="user-info">
                 <div class="profile-circle"></div>
                 <span class="username-text">${comment.user}</span>
+                ${displayTag}
             </div>
             <div class="comment-box">
                 <div class="comment-actions">

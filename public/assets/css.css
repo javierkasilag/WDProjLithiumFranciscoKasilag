@@ -102,25 +102,15 @@ footer {
   color: #ffffff;
   font-family: 'VCR OSD Mono', monospace;
   cursor: pointer;
-
-  transition:
-    color 0.25s ease,
-    background-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
-
 
 .nav a.nav-button:hover {
   background: #000;
   color: #00eaff;
   transform: scale(1.08);
-
-  box-shadow:
-    0 0 6px rgba(0, 234, 255, 0.6),
-    0 0 14px rgba(0, 234, 255, 0.4);
+  box-shadow: 0 0 6px rgba(0, 234, 255, 0.6), 0 0 14px rgba(0, 234, 255, 0.4);
 }
-
 
 footer .copyright {
   color: #bbb;
@@ -128,12 +118,8 @@ footer .copyright {
   font-weight: 800;
   text-align: center;
   cursor: pointer;
-  transition: 
-    color 0.25s ease,
-    transform 0.25s ease,
-    text-shadow 0.25s ease;
+  transition: color 0.25s ease, transform 0.25s ease, text-shadow 0.25s ease;
 }
-
 
 p {
   text-align: justify;
@@ -260,7 +246,6 @@ div.infobox {
   clear: both;
 }
 
-
 body.tech-page .tech-page-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -306,7 +291,6 @@ body.tech-page .tech-card-content p {
   text-align: justify;
   color: #fff;
 }
-
 
 .timeline-event-container img {
   max-width: 100%;
@@ -416,7 +400,6 @@ body.tech-page .tech-card-content p {
   margin: 0 auto 30px;
 }
 
-
   .timeline-event-container img {
     max-width: 100%;
     max-height: 250px;
@@ -426,6 +409,7 @@ body.tech-page .tech-card-content p {
     font-size: 1.1rem;
   }
 }
+
 footer .copyright:hover {
   color: #00eaff;
   transform: scale(1.06);
@@ -434,16 +418,11 @@ footer .copyright:hover {
     0 0 6px rgba(0, 234, 255, 0.6),
     0 0 12px rgba(0, 234, 255, 0.4);
 }
-body {
-  animation: crtBoot 1.2s ease-out;
-}
 
 @keyframes scanlineMove {
   from { background-position-y: 0; }
   to { background-position-y: 100px; }
 }
-
-
 
 @keyframes scanlineGlow {
   0% {
@@ -463,7 +442,6 @@ body {
   }
 }
 
-
 .nav a.nav-button:hover {
   animation: scanlineGlow 1.8s infinite ease-in-out;
 }
@@ -475,7 +453,6 @@ body {
     0 0 10px rgba(0, 234, 255, 0.3);
 }
 
-
 .nav a.nav-button.active-page {
   color: #00eaff;
   border-color: #00eaff;
@@ -485,16 +462,12 @@ body {
     0 0 26px rgba(0, 234, 255, 0.6);
 }
 
-
-
 footer .copyright:active {
   transform: scale(0.95);
   text-shadow:
     0 0 4px rgba(0, 234, 255, 0.6),
     0 0 10px rgba(0, 234, 255, 0.4);
 }
-
-
 
 .dot:hover {
   border-color: #00eaff;
@@ -512,7 +485,6 @@ footer .copyright:active {
     0 0 22px rgba(0, 234, 255, 0.6);
 }
 
-
 .timeline-event-container img {
   box-shadow:
     0 0 10px rgba(0, 234, 255, 0.6);
@@ -523,6 +495,7 @@ footer .copyright:active {
     0 0 18px rgba(0, 234, 255, 0.9),
     0 0 30px rgba(0, 234, 255, 0.5);
 }
+
 body.cities-page {
   background-color: #000;
   font-family: 'VCR OSD Mono', monospace;
@@ -600,10 +573,6 @@ body.cities-page {
   line-height: 1.5;
 }
 
-/* =========================================
-   COMMENT BOARD STYLES
-   ========================================= */
-
 .comment-board-body {
   background-color: black;
   min-height: 100vh;
@@ -649,6 +618,21 @@ body.cities-page {
   color: #00eaff;
 }
 
+.tag-badge {
+  background: #111;
+  border: 1px solid #444;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.tag-bug { border-color: #ff4444; color: #ff4444; box-shadow: 0 0 5px rgba(255, 68, 68, 0.2); }
+.tag-question { border-color: #ffbb00; color: #ffbb00; box-shadow: 0 0 5px rgba(255, 187, 0, 0.2); }
+.tag-suggestion { border-color: #00ff00; color: #00ff00; box-shadow: 0 0 5px rgba(0, 255, 0, 0.2); }
+.tag-misc { border-color: #00eaff; color: #00eaff; box-shadow: 0 0 5px rgba(0, 234, 255, 0.2); }
+
 .comment-box {
   border: 3px solid #444;
   padding: 15px;
@@ -660,8 +644,7 @@ body.cities-page {
   position: absolute;
   top: 5px;
   right: 5px;
-  display: flex;
-  gap: 5px;
+  display: flex; gap: 5px;
 }
 
 .delete-btn, .edit-btn {
@@ -703,10 +686,6 @@ body.cities-page {
   box-shadow: 0 0 14px rgba(0, 234, 255, 0.4);
 }
 
-/* =========================================
-   COMMENT CREATOR STYLES
-   ========================================= */
-
 .creator-main {
   display: flex;
   justify-content: center;
@@ -733,7 +712,7 @@ body.cities-page {
   color: #00eaff;
 }
 
-.form-group input, .form-group textarea {
+.form-group input, .form-group textarea, .form-group select {
   width: 100%;
   background: #000;
   border: 3px solid #444;
@@ -743,46 +722,50 @@ body.cities-page {
   outline: none;
 }
 
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
   border-color: #00eaff;
 }
 
 .toggle-pass {
   position: absolute;
-  right: 10px;
-  top: 40px;
+  right: 12px;
+  top: 42px;
   background: none;
   border: none;
-  color: #444;
   cursor: pointer;
-  font-family: 'VCR OSD Mono', monospace;
-  font-size: 0.8rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.toggle-pass:hover {
-  color: #00eaff;
+.eye-icon {
+  width: 24px;
+  height: 24px;
+  /* This filter forces dark icons to become light grey/white */
+  filter: invert(1) brightness(0.8);
+  opacity: 0.8;
+  transition: opacity 0.2s;
 }
 
-.submit-btn {
-  width: 100%;
-  padding: 18px;
-  background: black;
-  border: 3px solid #444;
-  color: white;
-  font-family: 'VCR OSD Mono', monospace;
-  font-weight: 800;
+.eye-icon:hover {
+  opacity: 1;
+  filter: invert(1) brightness(1);
+}
+
+.toggle-pass {
+  position: absolute;
+  right: 12px;
+  top: 42px;
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
 }
-
-.submit-btn:hover {
-  color: #00eaff;
-  border-color: #00eaff;
-}
-
-/* =========================================
-   TERMINAL MODAL STYLES
-   ========================================= */
 
 .modal-overlay {
   display: none;
@@ -791,8 +774,7 @@ body.cities-page {
   width: 100%; height: 100%;
   background: rgba(0, 0, 0, 0.85);
   z-index: 1000;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; align-items: center;
 }
 
 .modal-box {
@@ -854,10 +836,6 @@ body.cities-page {
 .modal-success .modal-title, .modal-prompt .modal-title { color: #00eaff; }
 .modal-success .modal-btn:hover, .modal-prompt .modal-btn:hover { background: #00eaff; color: black; }
 
-/* =========================================
-   EMOJI PICKER STYLES
-   ========================================= */
-
 .emoji-grid {
   display: none;
   grid-template-columns: repeat(8, 1fr);
@@ -881,9 +859,7 @@ body.cities-page {
   transition: transform 0.1s;
 }
 
-.emoji-item:hover {
-  transform: scale(1.2);
-}
+.emoji-item:hover { transform: scale(1.2); }
 
 .emoji-toggle-btn {
   background: none;
@@ -898,6 +874,4 @@ body.cities-page {
   font-family: 'Noto Color Emoji', sans-serif;
 }
 
-.emoji-toggle-btn:hover {
-  color: #00eaff;
-}
+.emoji-toggle-btn:hover { color: #00eaff; }
