@@ -5,59 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TWR — Create Comment</title>
   <link rel="stylesheet" href="../public/assets/css.css">
-  <link rel="icon" type="image/png" href="../public/assets/Logo.png">
-  <style>
-    .creator-main { display: flex; justify-content: center; align-items: center; min-height: 70vh; }
-    .form-container { width: 500px; border: 5px solid #444; padding: 40px; background: rgba(0, 0, 0, 0.95); }
-    .form-group { margin-bottom: 20px; position: relative; }
-    label { display: block; margin-bottom: 10px; font-weight: 800; color: #00eaff; }
-    input, textarea { width: 100%; background: #000; border: 3px solid #444; padding: 12px; font-family: 'VCR OSD Mono', monospace; color: white; outline: none; }
-    input:focus, textarea:focus { border-color: #00eaff; }
-    .toggle-pass { position: absolute; right: 10px; top: 40px; background: none; border: none; color: #444; cursor: pointer; font-family: 'VCR OSD Mono', monospace; font-size: 0.8rem; }
-    .toggle-pass:hover { color: #00eaff; }
-    .submit-btn { width: 100%; padding: 18px; background: black; border: 3px solid #444; color: white; font-family: 'VCR OSD Mono', monospace; font-weight: 800; cursor: pointer; }
-    .submit-btn:hover { color: #00eaff; border-color: #00eaff; }
-
-    /* Modal Styles */
-    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); z-index: 1000; justify-content: center; align-items: center; }
-    .modal-box { width: 400px; background: black; border: 4px solid #444; padding: 20px; text-align: center; box-shadow: 0 0 30px rgba(0,0,0,0.8); }
-    .modal-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 15px; display: block; }
-    .modal-message { font-size: 1rem; margin-bottom: 20px; display: block; }
-    .modal-input { width: 100%; background: #111; border: 2px solid #444; color: white; padding: 10px; font-family: 'VCR OSD Mono'; display: none; margin-bottom: 15px; outline: none; }
-    .modal-btn { background: black; border: 2px solid #444; color: white; padding: 10px 20px; cursor: pointer; font-family: 'VCR OSD Mono'; font-weight: 800; width: 100%; }
-    
-    .modal-error .modal-box { border-color: #ff4444; box-shadow: 0 0 15px rgba(255, 68, 68, 0.3); }
-    .modal-error .modal-title, .modal-error .modal-btn:hover { color: #ff4444; }
-    .modal-error .modal-btn:hover { border-color: #ff4444; }
-
-    .modal-success .modal-box, .modal-prompt .modal-box { border-color: #00eaff; box-shadow: 0 0 15px rgba(0, 234, 255, 0.3); }
-    .modal-success .modal-title, .modal-prompt .modal-title { color: #00eaff; }
-    .modal-success .modal-btn:hover, .modal-prompt .modal-btn:hover { background: #00eaff; color: black; }
-    .modal-input:focus { border-color: #00eaff; }
-  </style>
+  
 </head>
 <body>
   <header class="topbar">
     <a href="../index.html" class="logo-container"><img src="assets/Logo.png" alt="Home Logo"></a>
   </header>
+  
   <main class="creator-main">
     <div class="form-container">
-      <h2 style="text-align: center; margin-bottom: 30px;">TRANSMISSION TERMINAL</h2>
+      <h2 style="text-align: center; margin-bottom: 30px;">COMMENT BOARD</h2>
       <form onsubmit="saveComment(event)">
         <div class="form-group">
-          <label>> ID / EMAIL</label>
+          <label>> USERNAME / EMAIL</label>
           <input type="text" id="userIdentifier" placeholder="Enter identification..." required>
         </div>
         <div class="form-group">
-          <label>> ACCESS KEY (PASSWORD)</label>
+          <label>> PASSWORD</label>
           <input type="password" id="userPassword" placeholder="Set security key..." required>
           <button type="button" class="toggle-pass" onclick="togglePasswordVisibility()">[SHOW/HIDE]</button>
         </div>
         <div class="form-group">
-          <label>> MESSAGE PACKET</label>
+          <label>> MESSAGE </label>
           <textarea id="commentTextArea" rows="4" placeholder="Awaiting input..." required></textarea>
+          <button type="button" class="emoji-toggle-btn" onclick="toggleEmojiPicker('creatorEmojiGrid')">😀</button>
+          <div id="creatorEmojiGrid" class="emoji-grid" style="bottom: -150px; right: 0;"></div>
         </div>
-        <button type="submit" class="submit-btn">SEND TRANSMISSION</button>
+        <button type="submit" class="submit-btn">COMMENT SUBMITTED</button>
       </form>
     </div>
   </main>

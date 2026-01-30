@@ -1,5 +1,16 @@
 let notificationCallback = null;
 
+const emojiList = [
+    "😀","😃","😄","😅","🤣","😂","🙂","🙃","😉","😊","😇","🥰","😍","🤩","😘","😋","😛","😜","🤪","😎",
+    "🥳","😏","😒","😞","😔","😟","😕","☹️","😣","😖","😫","😩","🥺","😢","😭","😤","😠","😡","🤬","🤯",
+    "😳","🥵","🥶","😱","😨","😰","😥","😓","🤗","🤔","🤭","🤫","🤥","😶","😐","😑","😬","🙄","😯","😦",
+    "😧","😮","😲","🥱","😴","🤤","😪","😵","🤐","🥴","🤢","🤮","🤧","😷","🤒","🤕","🤑","🤠","😈","👿",
+    "🤡","💩","👻","💀","☠️","👽","👾","🤖","😺","😸","😹","😻","😼","😽","🙀","😿","😾","👋","🤚","🖐",
+    "✋","🖖","👌","🤏","✌️","🤞","🤟","🤘","🤙","👈","👉","👆","👇","👍","👎","✊","👊","🤛","🤜","👏",
+    "🙌","👐","🤲","🤝","🙏","💪","🧠","👀","👁️","💋","👄","🦷","👅","❤","🧡","💛","💚","💙","💜","🤎",
+    "🖤","🤍","💔","❣","💕","💞","💓","💗","💖","💘","💝","🔥","✨","🌟","⭐","🎵","🎶","❗","❓","💤"
+];
+
 function togglePasswordVisibility() {
     const passInput = document.getElementById('userPassword');
     passInput.type = passInput.type === 'password' ? 'text' : 'password';
@@ -11,15 +22,16 @@ function showTerminalNotification(message, type, callback = null) {
     const titleBox = document.getElementById('modalTitle');
     const inputField = document.getElementById('modalInput');
     const actionBtn = document.getElementById('modalActionBtn');
+    const emojiBtn = document.getElementById('emojiToggleModal');
 
     modal.style.display = 'flex';
     msgBox.innerText = message;
     notificationCallback = callback;
 
-    // Reset styles
     modal.classList.remove('modal-error', 'modal-success', 'modal-prompt');
     inputField.style.display = 'none';
     inputField.value = '';
+    if(emojiBtn) emojiBtn.style.display = 'none';
 
     if (type === 'error') {
         modal.classList.add('modal-error');
@@ -35,6 +47,10 @@ function showTerminalNotification(message, type, callback = null) {
         inputField.style.display = 'block';
         inputField.focus();
         actionBtn.innerText = "SUBMIT";
+        
+        if (message === "ENTER NEW CONTENT:") {
+             if(emojiBtn) emojiBtn.style.display = 'block';
+        }
     }
 }
 
@@ -49,6 +65,45 @@ function handleModalAction() {
     }
 }
 
+function toggleEmojiPicker(gridId) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+
+    if (grid.style.display === 'grid') {
+        grid.style.display = 'none';
+    } else {
+        if (grid.innerHTML === '') {
+            emojiList.forEach(emoji => {
+                const span = document.createElement('span');
+                span.className = 'emoji-item';
+                span.innerText = emoji;
+                span.onclick = () => insertEmoji(emoji, gridId);
+                grid.appendChild(span);
+            });
+        }
+        grid.style.display = 'grid';
+    }
+}
+
+function insertEmoji(emoji, gridId) {
+    let targetInput;
+    if (gridId === 'creatorEmojiGrid') {
+        targetInput = document.getElementById('commentTextArea');
+    } else if (gridId === 'modalEmojiGrid') {
+        targetInput = document.getElementById('modalInput');
+    }
+
+    if (targetInput) {
+        const start = targetInput.selectionStart;
+        const end = targetInput.selectionEnd;
+        const text = targetInput.value;
+        targetInput.value = text.substring(0, start) + emoji + text.substring(end);
+        targetInput.selectionStart = targetInput.selectionEnd = start + emoji.length;
+        targetInput.focus();
+    }
+    document.getElementById(gridId).style.display = 'none';
+}
+
 function saveComment(event) {
     event.preventDefault();
     const identifier = document.getElementById('userIdentifier').value;
@@ -61,9 +116,6 @@ function saveComment(event) {
     }
 
     const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
-
-    // --- SECURITY CHECK ---
-    // Ensure one username = one password forever
     const userMatch = existingComments.find(c => c.user === identifier);
     if (userMatch && userMatch.pass !== password) {
         showTerminalNotification("IDENTITY CONFLICT: INCORRECT PASSWORD FOR THIS USER ID.", "error");
@@ -95,23 +147,16 @@ function performDeletion(id) {
 }
 
 function deleteComment(commentId) {
-    // Step 1: Prompt for Access Key (User Password OR Admin Password)
     showTerminalNotification("ENTER ACCESS KEY TO DELETE:", "prompt", (inputPass) => {
         const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
         const commentToDelete = existingComments.find(c => c.id === commentId);
 
         if (!commentToDelete) return;
 
-        // Check A: Is this the specific password for this comment?
         if (inputPass === commentToDelete.pass) {
             performDeletion(commentId);
-        } 
-        // Check B: Is this the Admin Password?
-        else if (inputPass === "thisisaveryverylongadminpasswordthatnoonewillfind") {
-            // Close the current modal to prepare for the ID check
+        } else if (inputPass === "password1") {
             document.getElementById('terminalModal').style.display = 'none';
-            
-            // Wait 200ms then ask for Admin ID
             setTimeout(() => {
                 showTerminalNotification("ENTER ADMIN IDENTIFICATION:", "prompt", (adminId) => {
                     if (adminId === "noahconnorcfrancisco@gmail.com") {
@@ -121,9 +166,7 @@ function deleteComment(commentId) {
                     }
                 });
             }, 200);
-        } 
-        // Failure
-        else {
+        } else {
             showTerminalNotification("ACCESS DENIED: INVALID KEY", "error");
         }
     });
@@ -167,7 +210,7 @@ function loadComments() {
                 <span class="username-text">${comment.user}</span>
             </div>
             <div class="comment-box">
-                <div style="position: absolute; top: 5px; right: 5px; display: flex; gap: 5px;">
+                <div class="comment-actions">
                     <button class="edit-btn" onclick="editComment(${comment.id})">EDIT</button>
                     <button class="delete-btn" onclick="deleteComment(${comment.id})">DELETE</button>
                 </div>
