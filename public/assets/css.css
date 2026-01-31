@@ -204,10 +204,10 @@ div.infobox {
 }
 
 .timeline-event {
-  font-size: 1.3rem;
-  width: 90%;
-  margin: 0 auto 10px;
+
   text-align: justify;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 .timeline-line {
@@ -299,15 +299,16 @@ body.tech-page .tech-card-content p {
 }
 
 .timeline-event-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #0ff;
-  opacity: 0;
-  transform: scale(0.98);
-  transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
-  max-height: 350px;
+  float: left;
+  width: 45%;
+  max-width: 500px; 
+  height: 300px; 
+  margin-right: 25px;
+  margin-bottom: 10px;
   object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  border: 2px solid #444;
 }
 
 .timeline-event-container.show img {
@@ -321,19 +322,18 @@ body.tech-page .tech-card-content p {
 }
 
 .timeline-event-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 15px;
+  display: block; 
   width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
 }
 
-@media screen and (min-width: 900px) {
-  .timeline-event-container {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 20px;
+@media screen and (max-width: 768px) {
+  .timeline-event-container img {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }
 

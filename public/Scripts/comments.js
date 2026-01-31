@@ -157,7 +157,7 @@ function performDeletion(id) {
 }
 
 function deleteComment(commentId) {
-    showTerminalNotification("ENTER ACCESS KEY TO DELETE:", "prompt", (inputPass) => {
+    showTerminalNotification("ENTER PASSWORD TO DELETE:", "prompt", (inputPass) => {
         const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
         const commentToDelete = existingComments.find(c => c.id === commentId);
 
@@ -177,13 +177,13 @@ function deleteComment(commentId) {
                 });
             }, 200);
         } else {
-            showTerminalNotification("ACCESS DENIED: INVALID KEY", "error");
+            showTerminalNotification("ACCESS DENIED: INVALID PASSWORD", "error");
         }
     });
 }
 
 function editComment(commentId) {
-    showTerminalNotification("ENTER ACCESS KEY TO EDIT:", "prompt", (inputPass) => {
+    showTerminalNotification("ENTER PASSWORD TO EDIT:", "prompt", (inputPass) => {
         const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
         const index = existingComments.findIndex(c => c.id === commentId);
 
@@ -200,7 +200,7 @@ function editComment(commentId) {
                 document.getElementById('modalInput').value = existingComments[index].text; 
             }, 200);
         } else {
-             showTerminalNotification("ACCESS DENIED: INVALID KEY", "error", () => {
+             showTerminalNotification("ACCESS DENIED: INVALID PASSWORD", "error", () => {
                  document.getElementById('terminalModal').style.display = 'none';
              });
         }
