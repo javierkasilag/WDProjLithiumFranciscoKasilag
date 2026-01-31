@@ -142,7 +142,7 @@ function saveComment(event) {
     existingComments.push(newComment);
     localStorage.setItem('twr_comments', JSON.stringify(existingComments));
     
-    showTerminalNotification("TRANSMISSION UPLOADED SUCCESSFULLY.", "success", () => {
+    showTerminalNotification("COMMENT UPLOADED SUCCESSFULLY.", "success", () => {
         window.location.href = 'commentboard_page.html';
     });
 }
