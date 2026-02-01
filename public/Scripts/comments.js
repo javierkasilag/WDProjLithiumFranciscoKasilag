@@ -165,7 +165,7 @@ function deleteComment(commentId) {
 
         if (inputPass === commentToDelete.pass) {
             performDeletion(commentId);
-        } else if (inputPass === "password1") {
+        } else if (inputPass === "adminmasterpasswordimportant") {
             document.getElementById('terminalModal').style.display = 'none';
             setTimeout(() => {
                 showTerminalNotification("ENTER ADMIN IDENTIFICATION:", "prompt", (adminId) => {
