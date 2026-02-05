@@ -147,7 +147,7 @@ function saveComment(event) {
     showTerminalNotification("COMMENT UPLOADED SUCCESSFULLY.", "success", () => {
         window.location.href = 'commentboard_page.html';
     });
-    //Merely shows a notification to the user if their comment goes through
+    //Merely shows a notification to the user that their comment went through
 }
 
 function performDeletion(id) {
@@ -158,6 +158,7 @@ function performDeletion(id) {
     document.getElementById('terminalModal').style.display = 'none';
     setTimeout(() => location.reload(), 100);
 }
+//Actually deletes the comment from the board once the deleteComment function works
 
 function deleteComment(commentId) {
     showTerminalNotification("ENTER PASSWORD TO DELETE:", "prompt", (inputPass) => {
