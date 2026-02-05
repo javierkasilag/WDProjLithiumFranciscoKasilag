@@ -23,7 +23,7 @@ function togglePasswordVisibility() {
         eyeIcon.src = 'assets/closed.png';
     }
 }
-//Thisis essientially the "show or hide" feature where if the user presses the eye icon, the password becomes usable to the user.
+//This is essientially the "show or hide" feature where if the user presses the eye icon, the password becomes usable to the user.
 function showTerminalNotification(message, type, callback = null) {
     const modal = document.getElementById('terminalModal');
     const msgBox = document.getElementById('modalMessage');
@@ -100,7 +100,7 @@ function insertEmoji(emoji, gridId) {
     } else if (gridId === 'modalEmojiGrid') {
         targetInput = document.getElementById('modalInput');
     }
-
+    // Function that allow users to use the previously created emoji list.
     if (targetInput) {
         const start = targetInput.selectionStart;
         const end = targetInput.selectionEnd;
@@ -111,7 +111,7 @@ function insertEmoji(emoji, gridId) {
     }
     document.getElementById(gridId).style.display = 'none';
 }
-
+//emoji shit
 function saveComment(event) {
     event.preventDefault();
     const identifier = document.getElementById('userIdentifier').value;
@@ -123,13 +123,14 @@ function saveComment(event) {
         showTerminalNotification("DATA PACKET INCOMPLETE. ALL FIELDS REQUIRED.", "error");
         return;
     }
-
+    // Checks whether the user has filled all the fields required, if they havent, a error message will be displayed.
     const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
     const userMatch = existingComments.find(c => c.user === identifier);
     if (userMatch && userMatch.pass !== password) {
         showTerminalNotification("IDENTITY CONFLICT: INCORRECT PASSWORD FOR THIS USER ID.", "error");
         return;
     }
+    // If the user's inputted password and the previous password conflict, and error message will be sent to the user.
 
     const newComment = {
         id: Date.now(),
@@ -138,13 +139,15 @@ function saveComment(event) {
         tag: tag,
         text: commentBody
     };
+    //Stores data for a comment
 
     existingComments.push(newComment);
     localStorage.setItem('twr_comments', JSON.stringify(existingComments));
-    
+    // This displays the comment on the comment board.
     showTerminalNotification("COMMENT UPLOADED SUCCESSFULLY.", "success", () => {
         window.location.href = 'commentboard_page.html';
     });
+    //Merely shows a notification to the user if their comment goes through
 }
 
 function performDeletion(id) {
