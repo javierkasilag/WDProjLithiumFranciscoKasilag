@@ -10,7 +10,7 @@ const emojiList = [
     "🙌","👐","🤲","🤝","🙏","💪","🧠","👀","👁️","💋","👄","🦷","👅","❤","🧡","💛","💚","💙","💜","🤎",
     "🖤","🤍","💔","❣","💕","💞","💓","💗","💖","💘","💝","🔥","✨","🌟","⭐","🎵","🎶","❗","❓","💤"
 ];
-
+//This creates a constant which has emojis as its values, which the user can use while creating a comment.
 function togglePasswordVisibility() {
     const passInput = document.getElementById('userPassword');
     const eyeIcon = document.getElementById('eyeIcon');
@@ -23,7 +23,7 @@ function togglePasswordVisibility() {
         eyeIcon.src = 'assets/closed.png';
     }
 }
-
+//Thisis essientially the "show or hide" feature where if the user presses the eye icon, the password becomes usable to the user.
 function showTerminalNotification(message, type, callback = null) {
     const modal = document.getElementById('terminalModal');
     const msgBox = document.getElementById('modalMessage');
