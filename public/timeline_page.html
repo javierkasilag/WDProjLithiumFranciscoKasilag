@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en">
+
+<!-- metadata -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Thousand Week Reich — Timeline">
@@ -13,41 +15,35 @@
 </head>
 
 <body>
+  <!-- logo linking to home screen-->
+  <header class="topbar">
+    <a href="../index.html" class="logo-container">
+      <img src="assets/Logo.png" alt="Home Logo">
+    </a>
+  </header>
 
-<header class="topbar">
-  <a href="../index.html" class="logo-container">
-    <img src="assets/Logo.png" alt="Home Logo">
-  </a>
-</header>
+  <!-- actual timeline interface -->
+  <main class="timeline-hero">
+    <button id="prev" class="side-button">←</button>
+    <div class="timeline-wrapper">
+      <h1 id="year" class="timeline-year">1939</h1>
+      <div class="timeline-line" id="timeline-line"></div>
+    </div>
+    <button id="next" class="side-button">→</button>
+  </main>
 
-<main class="timeline-hero">
-
-  <button id="prev" class="side-button">←</button>
-
-  <div class="timeline-wrapper">
-    <h1 id="year" class="timeline-year">1939</h1>
-    
-
-
-    <div class="timeline-line" id="timeline-line"></div>
-  </div>
-
-  <button id="next" class="side-button">→</button>
-
-</main>
-
-<footer>
-  <nav class="nav">
-    <a href="map_page.html" class="nav-button">Map</a>
-    <a href="timeline_page.html" class="nav-button">Timeline</a>
-    <a href="factions_page.html" class="nav-button">Factions</a>
-    <a href="cities_page.html" class="nav-button">Cities</a>
-    <a href="tech_page.html" class="nav-button">Tech</a>
-    <a href="commentboard_page.html" class="nav-button">Comments</a>
-    <a href="sources_page.html" class="nav-button">Sources</a>
-  </nav>
-  <div class="copyright">©Quandale Dingle Productions | All Rights Reserved</div>
-</footer>
-
+  <!-- inter-page navigation -->
+  <footer>
+    <nav class="nav">
+      <a href="map_page.html" class="nav-button">Map</a>
+      <a href="timeline_page.html" class="nav-button">Timeline</a>
+      <a href="factions_page.html" class="nav-button">Factions</a>
+      <a href="cities_page.html" class="nav-button">Cities</a>
+      <a href="tech_page.html" class="nav-button">Tech</a>
+      <a href="commentboard_page.html" class="nav-button">Comments</a>
+      <a href="sources_page.html" class="nav-button">Sources</a>
+    </nav>
+    <div class="copyright">©Quandale Dingle Productions | All Rights Reserved</div>
+  </footer>
 </body>
 </html>
