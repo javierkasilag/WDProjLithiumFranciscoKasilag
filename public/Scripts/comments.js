@@ -1,6 +1,6 @@
 let notificationCallback = null;
 
-// Stores all usable emojis.
+// Stores all usable emojis
 const emojiList = [
     "😀","😃","😄","😅","🤣","😂","🙂","🙃","😉","😊","😇","🥰","😍","🤩","😘","😋","😛","😜","🤪","😎",
     "🥳","😏","😒","😞","😔","😟","😕","☹️","😣","😖","😫","😩","🥺","😢","😭","😤","😠","😡","🤬","🤯",
@@ -11,7 +11,7 @@ const emojiList = [
     "🙌","👐","🤲","🤝","🙏","💪","🧠","👀","👁️","💋","👄","🦷","👅","❤","🧡","💛","💚","💙","💜","🤎",
     "🖤","🤍","💔","❣","💕","💞","💓","💗","💖","💘","💝","🔥","✨","🌟","⭐","🎵","🎶","❗","❓","💤"
 ];
-//This creates a constant which has emojis as its values, which the user can use while creating a comment.
+//This creates a constant which has emojis as its values, which the user can use while creating a comment
 
 // Shows or hides password text.
 function togglePasswordVisibility() {
@@ -28,7 +28,7 @@ function togglePasswordVisibility() {
 }
 //This is essientially the "show or hide" feature where if the user presses the eye icon, the password becomes usable to the user.
 
-// Displays custom alert box.
+// Displays custom alert box
 function showTerminalNotification(message, type, callback = null) {
     const modal = document.getElementById('terminalModal');
     const msgBox = document.getElementById('modalMessage');
@@ -67,7 +67,7 @@ function showTerminalNotification(message, type, callback = null) {
     }
 }
 
-// Runs when modal button clicked.
+// Runs when modal button clicked
 function handleModalAction() {
     const modal = document.getElementById('terminalModal');
     const inputVal = document.getElementById('modalInput').value;
@@ -79,7 +79,7 @@ function handleModalAction() {
     }
 }
 
-// Shows or hides emoji list.
+// Shows or hides emoji list
 function toggleEmojiPicker(gridId) {
     const grid = document.getElementById(gridId);
     if (!grid) return;
@@ -100,7 +100,7 @@ function toggleEmojiPicker(gridId) {
     }
 }
 
-// Puts emoji in text box.
+// Puts emoji in text box
 function insertEmoji(emoji, gridId) {
     let targetInput;
     if (gridId === 'creatorEmojiGrid') {
@@ -108,7 +108,7 @@ function insertEmoji(emoji, gridId) {
     } else if (gridId === 'modalEmojiGrid') {
         targetInput = document.getElementById('modalInput');
     }
-    // Function that allow users to use the previously created emoji list.
+    // Function that allow users to use the previously created emoji list
     if (targetInput) {
         const start = targetInput.selectionStart;
         const end = targetInput.selectionEnd;
@@ -119,7 +119,7 @@ function insertEmoji(emoji, gridId) {
     }
     document.getElementById(gridId).style.display = 'none';
 }
-//emoji shit
+
 
 // Saves user comment to storage.
 function saveComment(event) {
@@ -133,14 +133,14 @@ function saveComment(event) {
         showTerminalNotification("DATA PACKET INCOMPLETE. ALL FIELDS REQUIRED.", "error");
         return;
     }
-    // Checks whether the user has filled all the fields required, if they havent, a error message will be displayed.
+    // Checks whether the user has done all the info needed, if they havent, a error message will be displayed
     const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
     const userMatch = existingComments.find(c => c.user === identifier);
     if (userMatch && userMatch.pass !== password) {
         showTerminalNotification("IDENTITY CONFLICT: INCORRECT PASSWORD FOR THIS USER ID.", "error");
         return;
     }
-    // If the user's inputted password and the previous password conflict, and error message will be sent to the user.
+    // If the user's inputted password and the previous password conflict, and error message will be sent to the user
 
     const newComment = {
         id: Date.now(),
@@ -160,7 +160,7 @@ function saveComment(event) {
     //Merely shows a notification to the user that their comment went through
 }
 
-// Deletes comment from local storage.
+// Deletes comment from local storage
 function performDeletion(id) {
     const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
     const updatedComments = existingComments.filter(c => c.id !== id);
@@ -171,7 +171,7 @@ function performDeletion(id) {
 }
 //Actually deletes the comment from the board once the deleteComment function works
 
-// Checks password to delete comment.
+// Checks password to delete comment
 function deleteComment(commentId) {
     showTerminalNotification("ENTER PASSWORD TO DELETE:", "prompt", (inputPass) => {
         const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
@@ -198,7 +198,7 @@ function deleteComment(commentId) {
     });
 }
 
-// Checks password to edit comment.
+// Checks password to edit comment
 function editComment(commentId) {
     showTerminalNotification("ENTER PASSWORD TO EDIT:", "prompt", (inputPass) => {
         const existingComments = JSON.parse(localStorage.getItem('twr_comments')) || [];
@@ -224,7 +224,7 @@ function editComment(commentId) {
     });
 }
 
-// Puts saved comments on screen.
+// Puts saved comments on screen
 function loadComments() {
     const feed = document.getElementById('commentFeed');
     if (!feed) return;
