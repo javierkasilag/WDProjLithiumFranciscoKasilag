@@ -26,10 +26,14 @@ An overview of some of the major technological advancements relevant to this tim
 #### P6 (Sources):
 A list of all the sources and media used for the project.
 #### P7 (Comment Board):
-A page where comments will be displayed, visible for both us the site developers and others who browse through our website.
-#### P8 (Comment Input):
+A page where comments will be displayed, visible for both us the site developers and others who browse through our website. Will only be accessible if user is logged in (see P8).
+#### P8 (Log In):
+
+### P9 (Sign Up):
+
+#### P10 (Comment Input):
 An interface for inputting and posting comments (suggestions for the website, such as content/lore to add or additions to the site's design). Will use HTML forms to store comment information, namely comments in-themselves and the tags to label them under (e.g. Lore, Design, Site Errors, etc.).
-#### P9 (Comment Stats):
+#### P11 (Comment Stats):
 An analytical page for showing the statistics of users, such as number of comments sent overall, number of comments sent per suggestion tag, etc. Will use HTML forms to store user statistics.
 
 ******
@@ -57,10 +61,16 @@ An analytical page for showing the statistics of users, such as number of commen
 <img width="1920" height="1080" alt="Sources" src="https://github.com/user-attachments/assets/40f876d6-354e-479f-b2b5-b9a8530f5165" />
 
 #### P7 (Comment Board):
-<img width="1920" height="1080" alt="Comment Board" src="https://github.com/user-attachments/assets/85db98b4-c271-427d-acc7-8c25853c21ce" />
+<img width="1920" height="1080" alt="Comment Board" src="https://github.com/user-attachments/assets/5566669e-120a-47d4-8aa5-b4161b902ce0" />
 
-#### P8 (Comment Input):
-<img width="1920" height="1080" alt="Comment Input" src="https://github.com/user-attachments/assets/1c386611-0a3c-4ff5-9847-afca3d2303a5" />
+#### P8 (Log In):
+<img width="1920" height="1080" alt="Login" src="https://github.com/user-attachments/assets/d714a9c2-a306-4b84-b143-b06a75b524f8" />
 
-#### P9 (Comment Stats):
+### P9 (Sign Up):
+<img width="1920" height="1080" alt="Signup" src="https://github.com/user-attachments/assets/2de7c40d-e0ec-4a4a-8e9e-fb0468efee27" />
+
+#### P10 (Comment Input):
+<img width="1920" height="1080" alt="Comment Input" src="https://github.com/user-attachments/assets/e3782b75-bd5f-4ca4-b188-ce593bdda8f4" />
+
+#### P11 (Comment Stats):
 <img width="1920" height="1080" alt="Comment Stats" src="https://github.com/user-attachments/assets/2a5be273-13b0-41f5-97e0-d5e7de7ae91e" />
