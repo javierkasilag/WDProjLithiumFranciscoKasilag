@@ -52,15 +52,15 @@ A page where comments will be displayed, visible for both us the site developers
 <img width="1920" height="1080" alt="Comment Board" src="https://github.com/user-attachments/assets/5566669e-120a-47d4-8aa5-b4161b902ce0" />
 
 #### P8 (Log In):
-
+An interface for logging into the user's account, for accessing the comments section.
 <img width="1920" height="1080" alt="Login" src="https://github.com/user-attachments/assets/d714a9c2-a306-4b84-b143-b06a75b524f8" />
 
 #### P9 (Sign Up):
-
+An interface for creating the user's account if they do not already have one.
 <img width="1920" height="1080" alt="Signup" src="https://github.com/user-attachments/assets/2de7c40d-e0ec-4a4a-8e9e-fb0468efee27" />
 
 #### P10 (Comment Input):
-An interface for inputting and posting comments (suggestions for the website, such as content/lore to add or additions to the site's design). Will use HTML forms to store comment information, namely comments in-themselves and the tags to label them under (e.g. Lore, Design, Site Errors, etc.).
+An interface for inputting and posting comments (suggestions for the website, such as content/lore to add or additions to the site's design). Will use HTML forms to store comment information, namely comments in-themselves and the tags to label them under (e.g. Lore, Design, Site Errors, etc.). Will use CRUD for updating and deleting comments written and posted by the user.
 
 <img width="1920" height="1080" alt="Comment Input" src="https://github.com/user-attachments/assets/e3782b75-bd5f-4ca4-b188-ce593bdda8f4" />
 
