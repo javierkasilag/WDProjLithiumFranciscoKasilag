@@ -29,7 +29,7 @@ A list of all the sources and media used for the project.
 A page where comments will be displayed, visible for both us the site developers and others who browse through our website. Will only be accessible if user is logged in (see P8).
 #### P8 (Log In):
 
-### P9 (Sign Up):
+#### P9 (Sign Up):
 
 #### P10 (Comment Input):
 An interface for inputting and posting comments (suggestions for the website, such as content/lore to add or additions to the site's design). Will use HTML forms to store comment information, namely comments in-themselves and the tags to label them under (e.g. Lore, Design, Site Errors, etc.).
