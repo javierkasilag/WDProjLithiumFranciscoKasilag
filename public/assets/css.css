@@ -131,6 +131,12 @@ p {
   text-align: justify;
 }
 
+#map {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
 p.infoboxText, li.factionMemberList {
   font-size: 1.3rem;
   text-align: justify;
