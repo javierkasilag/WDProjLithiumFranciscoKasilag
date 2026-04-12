@@ -80,6 +80,7 @@ footer {
   padding: 20px 6vw;
   gap: 16px;
   height: auto;
+  position: relative;
 }
 
 .nav {
@@ -129,6 +130,12 @@ footer .copyright {
 
 p {
   text-align: justify;
+}
+
+#map {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 p.infoboxText, li.factionMemberList {
