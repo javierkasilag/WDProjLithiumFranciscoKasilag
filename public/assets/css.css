@@ -80,6 +80,7 @@ footer {
   padding: 20px 6vw;
   gap: 16px;
   height: auto;
+  position: relative;
 }
 
 .nav {
