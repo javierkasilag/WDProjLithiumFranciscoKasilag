@@ -316,11 +316,6 @@ body.tech-page .tech-card-content p {
   transform: scale(1);
 }
 
-.timeline-event-container img:hover {
-  box-shadow: 0 0 15px #0ff;
-  transform: scale(1.02);
-}
-
 .timeline-event-container {
   display: block; 
   width: 100%;
