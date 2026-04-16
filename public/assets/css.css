@@ -720,3 +720,68 @@ body.cities-page {
     box-shadow: 0 0 5px rgba(0, 234, 255, 0.5);
   }
 }
+/* ============================================================
+   AUTH PAGES — login_page.html / signup_page.html
+   ============================================================ */
+ 
+/* Switch link below the form ("Don't have an account? Sign up") */
+.auth-switch-link {
+  color: #444;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+ 
+.auth-switch-link:hover {
+  color: #00eaff;
+}
+ 
+/* ============================================================
+   TOPBAR SESSION BAR
+   Absolutely positioned so it never shifts the centred logo
+   ============================================================ */
+ 
+/* topbar needs relative positioning for the absolute child */
+.topbar {
+  position: relative;
+}
+ 
+/* Container for username label + logout button, top-right of header */
+.topbar-session {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+ 
+/* Displays the logged-in username */
+.session-username {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #00eaff;
+  white-space: nowrap;
+}
+ 
+/* Logout button */
+.logout-btn {
+  background: none;
+  border: 2px solid #ff4444;
+  color: #ff4444;
+  font-family: 'VCR OSD Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.logout-btn:hover {
+  background: #ff4444;
+  color: black;
+  box-shadow: 0 0 12px rgba(255, 68, 68, 0.5);
+}
