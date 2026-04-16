@@ -1,5 +1,5 @@
 // ============================================================
-// STORAGE KEYS — centralised so they're easy to swap out
+// STORAGE KEYS
 // ============================================================
 const STORAGE_COMMENTS = 'twr_comments';
 const STORAGE_USERS    = 'twr_users';    // { username, password }[]
@@ -16,10 +16,22 @@ function getSession() {
 }
  
 // Redirects to login if not authenticated; saves current URL so
-// login can bounce the user back afterward
+// login can bounce the user back afterward.
+// Only called by commentcreator_page.html
 function requireLogin() {
     if (!getSession()) {
         localStorage.setItem(STORAGE_REDIRECT, window.location.href);
+        window.location.href = 'login_page.html';
+    }
+}
+ 
+// Navigates to the comment creator, but gates it behind login.
+// Used by the "WRITE A COMMENT!" button on the public board.
+function goToCreator() {
+    if (getSession()) {
+        window.location.href = 'commentcreator_page.html';
+    } else {
+        localStorage.setItem(STORAGE_REDIRECT, 'commentcreator_page.html');
         window.location.href = 'login_page.html';
     }
 }
@@ -120,7 +132,6 @@ const emojiList = [
  
 // ============================================================
 // PASSWORD VISIBILITY TOGGLE
-// inputId / iconId are optional — defaults match the creator page
 // ============================================================
 function togglePasswordVisibility(inputId, iconId) {
     const passInput = document.getElementById(inputId || 'userPassword');
@@ -235,7 +246,6 @@ function insertEmoji(emoji, gridId) {
  
 // ============================================================
 // COMMENTS — CREATE
-// Identity comes from session; no ID/password fields on form
 // ============================================================
 function saveComment(event) {
     event.preventDefault();
@@ -267,7 +277,6 @@ function saveComment(event) {
  
 // ============================================================
 // COMMENTS — DELETE
-// Ownership verified by session; no password prompt needed
 // ============================================================
 function performDeletion(id) {
     const existingComments = JSON.parse(localStorage.getItem(STORAGE_COMMENTS)) || [];
@@ -302,7 +311,6 @@ function deleteComment(commentId) {
  
 // ============================================================
 // COMMENTS — EDIT
-// Ownership verified by session; no password prompt needed
 // ============================================================
 function editComment(commentId) {
     const user     = getSession();
@@ -332,7 +340,6 @@ function editComment(commentId) {
  
 // ============================================================
 // COMMENTS — READ (render to board)
-// Edit/delete buttons only appear on the current user's own cards
 // ============================================================
 function loadComments() {
     const feed = document.getElementById('commentFeed');

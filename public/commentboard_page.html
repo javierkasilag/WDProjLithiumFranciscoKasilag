@@ -8,7 +8,6 @@
   <meta name="keywords" content="TWR, Comments Comment Board, Alternate History, History, Thousand Week Reich, America, German Reich, Japan">
   <meta name="author" content="Noah Connor C. Francisco, Edgardo Javier D. Kasilag III">
   <title>TWR — Comment Board</title>
-  <script src="../public/Scripts/footer.js" defer></script>
   <link rel="stylesheet" href="../public/assets/css.css">
 </head>
  
@@ -25,7 +24,8 @@
       <a href="commentstatistics_page.html" class="send-btn">
         COMMENT STATS
       </a>
-      <a href="commentcreator_page.html" class="send-btn">WRITE A COMMENT!</a>
+      <!-- guarded by goToCreator() — redirects to login if not authenticated -->
+      <button class="send-btn" onclick="goToCreator()">WRITE A COMMENT!</button>
     </div>
   </main>
  
@@ -57,11 +57,5 @@
   </footer>
  
   <script src="../public/Scripts/comments.js"></script>
-  <script>
-    // Redirect to login if not authenticated; must run after comments.js defines requireLogin
-    document.addEventListener('DOMContentLoaded', () => {
-      requireLogin();
-    });
-  </script>
 </body>
 </html>
