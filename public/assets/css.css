@@ -722,11 +722,7 @@ body.cities-page {
     box-shadow: 0 0 5px rgba(0, 234, 255, 0.5);
   }
 }
-/* ============================================================
-   AUTH PAGES — login_page.html / signup_page.html
-   ============================================================ */
- 
-/* Switch link below the form ("Don't have an account? Sign up") */
+
 .auth-switch-link {
   color: #444;
   text-decoration: none;
@@ -740,17 +736,10 @@ body.cities-page {
   color: #00eaff;
 }
  
-/* ============================================================
-   TOPBAR SESSION BAR
-   Absolutely positioned so it never shifts the centred logo
-   ============================================================ */
- 
-/* topbar needs relative positioning for the absolute child */
 .topbar {
   position: relative;
 }
  
-/* Container for username label + logout button, top-right of header */
 .topbar-session {
   position: absolute;
   right: 20px;
@@ -761,7 +750,6 @@ body.cities-page {
   gap: 12px;
 }
  
-/* Displays the logged-in username */
 .session-username {
   font-size: 0.85rem;
   font-weight: 800;
@@ -769,7 +757,6 @@ body.cities-page {
   white-space: nowrap;
 }
  
-/* Logout button */
 .logout-btn {
   background: none;
   border: 2px solid #ff4444;
@@ -786,4 +773,306 @@ body.cities-page {
   background: #ff4444;
   color: black;
   box-shadow: 0 0 12px rgba(255, 68, 68, 0.5);
+}
+ 
+@media screen and (max-width: 900px) {
+ 
+  .nav a.nav-button {
+    width: 90px;
+    height: 52px;
+    font-size: 16px;
+    gap: 8px;
+  }
+ 
+  body.tech-page .tech-page-grid {
+    gap: 24px;
+    padding: 24px 4vw;
+  }
+ 
+  .factionImage {
+    width: 45%;
+    max-width: 400px;
+  }
+ 
+  .cityImage {
+    width: 55%;
+    max-width: 450px;
+  }
+ 
+  .comment-card,
+  .action-container {
+    width: 80%;
+  }
+ 
+  .form-container {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+ 
+ 
+@media screen and (max-width: 640px) {
+ 
+  h1 {
+    font-size: 36px;
+  }
+
+  .sources-grid ul {
+    font-size: 14px;
+  }
+ 
+  footer .copyright {
+    font-size: 16px;
+  }
+ 
+  p.infoboxText, li.factionMemberList {
+    font-size: 1rem;
+  }
+ 
+ 
+  .topbar {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+ 
+  .topbar-session {
+    position: static;
+    transform: none;
+    justify-content: center;
+  }
+ 
+  .logo-container img {
+    max-width: 220px;
+  }
+ 
+  .session-username {
+    font-size: 0.75rem;
+  }
+ 
+  .nav {
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+ 
+  .nav a.nav-button {
+    width: 80px;
+    height: 44px;
+    font-size: 13px;
+  }
+ 
+  .hero {
+    padding: 20px 5vw 50px;
+    min-height: unset;
+  }
+ 
+  .hero p {
+    font-size: 15px;
+    width: 100%;
+  }
+ 
+  div.infobox {
+    margin: 20px 3vw;
+    padding: 18px;
+  }
+ 
+  .factionImage {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-bottom: 16px;
+    display: block;
+  }
+ 
+  .factionFlag {
+    height: auto;
+    max-height: 180px;
+    width: 100%;
+    object-fit: contain;
+  }
+ 
+  .cityImage {
+    float: none !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 16px;
+    display: block;
+  }
+ 
+  body.tech-page .tech-page-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 4vw;
+  }
+ 
+  body.tech-page .tech-card-image {
+    height: 180px;
+  }
+ 
+  body.tech-page .tech-card-content h2 {
+    font-size: 24px;
+  }
+ 
+  body.tech-page .tech-card-content p {
+    font-size: 1rem;
+  }
+ 
+  .timeline-hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 4vw 40px;
+    gap: 16px;
+    min-height: unset;
+  }
+ 
+  .timeline-wrapper {
+    width: 100%;
+    order: 2;
+  }
+ 
+  #prev { order: 1; }
+  #next { order: 3; }
+ 
+  .side-button {
+    width: 50px;
+    height: 50px;
+    font-size: 28px;
+  }
+ 
+  .timeline-year {
+    font-size: 42px;
+  }
+ 
+  .timeline-line {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 6px;
+    padding-bottom: 4px;
+  }
+ 
+  .dot {
+    flex-shrink: 0;
+  }
+ 
+  .timeline-event {
+    font-size: 1rem;
+  }
+ 
+
+  .comment-card {
+    width: 92%;
+  }
+ 
+  .comment-actions {
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+ 
+  .action-container {
+    width: 92%;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+ 
+  .send-btn, .submit-btn {
+    font-size: 1rem;
+    padding: 14px 24px;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+  }
+ 
+  .user-info {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+ 
+ 
+  .creator-main {
+    align-items: flex-start;
+    padding: 20px 0;
+    min-height: unset;
+  }
+ 
+  .form-container {
+    width: calc(100% - 32px);
+    max-width: 100%;
+    margin: 0 16px;
+    padding: 24px 20px;
+  }
+
+ 
+  .modal-box {
+    width: calc(100% - 32px);
+    max-width: 400px;
+    padding: 16px;
+  }
+ 
+  .emoji-grid {
+    width: calc(100vw - 40px);
+    max-width: 300px;
+  }
+ 
+ 
+  #map {
+    width: 100%;
+    height: auto;
+  }
+
+ 
+  .sources-grid {
+    flex-direction: column;
+    padding: 0 4vw;
+    gap: 16px;
+  }
+ 
+  .infobox h1 {
+    font-size: 2rem !important;
+  }
+ 
+  .back-link {
+    font-size: 1rem;
+    padding: 10px 16px;
+  }
+}
+ 
+
+@media screen and (max-width: 400px) {
+ 
+  .nav a.nav-button {
+    width: 68px;
+    height: 40px;
+    font-size: 11px;
+  }
+ 
+  h1 {
+    font-size: 28px;
+  }
+ 
+  .timeline-year {
+    font-size: 32px;
+  }
+ 
+  .comment-card {
+    width: 96%;
+  }
+ 
+  .action-container {
+    width: 96%;
+  }
+ 
+  .form-container {
+    margin: 0 8px;
+    width: calc(100% - 16px);
+    padding: 20px 14px;
+  }
 }
