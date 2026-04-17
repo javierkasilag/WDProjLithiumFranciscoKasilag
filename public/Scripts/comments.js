@@ -1,14 +1,10 @@
-// ============================================================
 // STORAGE KEYS
-// ============================================================
 const STORAGE_COMMENTS = 'twr_comments';
 const STORAGE_USERS    = 'twr_users';    // { username, password }[]
 const STORAGE_SESSION  = 'twr_session';  // string (username) | null
 const STORAGE_REDIRECT = 'twr_redirect'; // URL to return to after login
  
-// ============================================================
 // SESSION HELPERS
-// ============================================================
  
 // Returns the currently logged-in username, or null
 function getSession() {
@@ -41,11 +37,8 @@ function logout() {
     localStorage.removeItem(STORAGE_SESSION);
     window.location.href = 'login_page.html';
 }
- 
-// ============================================================
+
 // TOPBAR SESSION DISPLAY
-// Called on every protected page to show username + logout btn
-// ============================================================
 function renderSessionBar() {
     const bar = document.getElementById('topbarSession');
     if (!bar) return;
@@ -58,10 +51,7 @@ function renderSessionBar() {
     }
 }
  
-// ============================================================
 // SIGNUP
-// Writes a new { username, password } record to twr_users
-// ============================================================
 function signup(event) {
     event.preventDefault();
     const username = document.getElementById('signupUsername').value.trim();
@@ -88,10 +78,7 @@ function signup(event) {
     });
 }
  
-// ============================================================
 // LOGIN
-// Validates credentials and sets twr_session on success
-// ============================================================
 function login(event) {
     event.preventDefault();
     const username = document.getElementById('loginUsername').value.trim();
@@ -116,9 +103,7 @@ function login(event) {
     });
 }
  
-// ============================================================
 // EMOJI LIST
-// ============================================================
 const emojiList = [
     "😀","😃","😄","😅","🤣","😂","🙂","🙃","😉","😊","😇","🥰","😍","🤩","😘","😋","😛","😜","🤪","😎",
     "🥳","😏","😒","😞","😔","😟","😕","☹️","😣","😖","😫","😩","🥺","😢","😭","😤","😠","😡","🤬","🤯",
@@ -130,9 +115,7 @@ const emojiList = [
     "🖤","🤍","💔","❣","💕","💞","💓","💗","💖","💘","💝","🔥","✨","🌟","⭐","🎵","🎶","❗","❓","💤"
 ];
  
-// ============================================================
 // PASSWORD VISIBILITY TOGGLE
-// ============================================================
 function togglePasswordVisibility(inputId, iconId) {
     const passInput = document.getElementById(inputId || 'userPassword');
     const eyeIcon   = document.getElementById(iconId   || 'eyeIcon');
@@ -147,9 +130,7 @@ function togglePasswordVisibility(inputId, iconId) {
     }
 }
  
-// ============================================================
 // TERMINAL MODAL
-// ============================================================
 let notificationCallback = null;
  
 function showTerminalNotification(message, type, callback = null) {
@@ -202,9 +183,7 @@ function handleModalAction() {
     }
 }
  
-// ============================================================
 // EMOJI PICKER
-// ============================================================
 function toggleEmojiPicker(gridId) {
     const grid = document.getElementById(gridId);
     if (!grid) return;
@@ -244,9 +223,7 @@ function insertEmoji(emoji, gridId) {
     document.getElementById(gridId).style.display = 'none';
 }
  
-// ============================================================
 // COMMENTS — CREATE
-// ============================================================
 function saveComment(event) {
     event.preventDefault();
  
@@ -275,9 +252,7 @@ function saveComment(event) {
     });
 }
  
-// ============================================================
 // COMMENTS — DELETE
-// ============================================================
 function performDeletion(id) {
     const existingComments = JSON.parse(localStorage.getItem(STORAGE_COMMENTS)) || [];
     const updatedComments  = existingComments.filter(c => c.id !== id);
@@ -299,7 +274,7 @@ function deleteComment(commentId) {
         return;
     }
  
-    // Require typing DELETE to confirm — prevents accidental clicks
+    // Require typing DELETE to confirm, prevents accidental clicks
     showTerminalNotification("TYPE 'DELETE' TO CONFIRM:", "prompt", (input) => {
         if (input.trim().toUpperCase() === 'DELETE') {
             performDeletion(commentId);
@@ -309,9 +284,7 @@ function deleteComment(commentId) {
     });
 }
  
-// ============================================================
 // COMMENTS — EDIT
-// ============================================================
 function editComment(commentId) {
     const user     = getSession();
     const comments = JSON.parse(localStorage.getItem(STORAGE_COMMENTS)) || [];
@@ -338,9 +311,7 @@ function editComment(commentId) {
     }, 200);
 }
  
-// ============================================================
 // COMMENTS — READ (render to board)
-// ============================================================
 function loadComments() {
     const feed = document.getElementById('commentFeed');
     if (!feed) return;
@@ -384,9 +355,7 @@ function loadComments() {
     });
 }
  
-// ============================================================
 // STATISTICS
-// ============================================================
 function updateStatistics() {
     const totalEl = document.getElementById('totalComments');
     if (!totalEl) return;
@@ -409,11 +378,9 @@ function updateStatistics() {
     document.getElementById('tagMisc').innerText        = stats.misc;
 }
  
-// ============================================================
 // INIT
 // renderSessionBar + loadComments run on every page load;
 // each page's own inline script handles any extra init (e.g. requireLogin)
-// ============================================================
 document.addEventListener('DOMContentLoaded', () => {
     renderSessionBar();
     loadComments();
