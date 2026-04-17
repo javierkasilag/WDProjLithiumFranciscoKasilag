@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
  
-<!-- metadata -->
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Thousand Week Reich Comment Board">
@@ -12,24 +11,20 @@
 </head>
  
 <body class="comment-board-body">
-  <!-- logo linking to home screen; topbarSession is populated by renderSessionBar() in comments.js -->
   <header class="topbar">
     <a href="../index.html" class="logo-container"><img src="assets/Logo.png" alt="Home Logo"></a>
     <div id="topbarSession" class="topbar-session"></div>
   </header>
  
-  <!-- feed container; comment cards are injected here by loadComments() -->
   <main class="comment-feed" id="commentFeed">
     <div class="action-container">
       <a href="commentstatistics_page.html" class="send-btn">
         COMMENT STATS
       </a>
-      <!-- guarded by goToCreator() — redirects to login if not authenticated -->
       <button class="send-btn" onclick="goToCreator()">WRITE A COMMENT!</button>
     </div>
   </main>
  
-  <!-- terminal modal -->
   <div id="terminalModal" class="modal-overlay">
     <div class="modal-box">
       <span id="modalTitle"   class="modal-title"  >>> SYSTEM ALERT</span>
@@ -45,13 +40,13 @@
   <!-- inter-page navigation -->
   <footer>
     <nav class="nav">
-      <a href="map_page.html"          class="nav-button">Map</a>
-      <a href="timeline_page.html"     class="nav-button">Timeline</a>
-      <a href="factions_page.html"     class="nav-button">Factions</a>
-      <a href="cities_page.html"       class="nav-button">Cities</a>
-      <a href="tech_page.html"         class="nav-button">Tech</a>
-      <a href="commentboard_page.html" class="nav-button active-page">Comments</a>
-      <a href="sources_page.html"      class="nav-button">Sources</a>
+      <a href="map_page.html" class="nav-button">Map</a>
+      <a href="timeline_page.html" class="nav-button">Timeline</a>
+      <a href="factions_page.html" class="nav-button">Factions</a>
+      <a href="cities_page.html" class="nav-button">Cities</a>
+      <a href="tech_page.html" class="nav-button">Tech</a>
+      <a href="commentboard_page.html" class="nav-button">Comments</a>
+      <a href="sources_page.html" class="nav-button">Sources</a>
     </nav>
     <div class="copyright">©Quandale Dingle Productions | All Rights Reserved</div>
   </footer>

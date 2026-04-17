@@ -1,19 +1,14 @@
 // STORAGE KEYS
 const STORAGE_COMMENTS = 'twr_comments';
-const STORAGE_USERS    = 'twr_users';    // { username, password }[]
-const STORAGE_SESSION  = 'twr_session';  // string (username) | null
-const STORAGE_REDIRECT = 'twr_redirect'; // URL to return to after login
+const STORAGE_USERS    = 'twr_users';
+const STORAGE_SESSION  = 'twr_session';
+const STORAGE_REDIRECT = 'twr_redirect';
  
 // SESSION HELPERS
  
-// Returns the currently logged-in username, or null
 function getSession() {
     return localStorage.getItem(STORAGE_SESSION);
 }
- 
-// Redirects to login if not authenticated; saves current URL so
-// login can bounce the user back afterward.
-// Only called by commentcreator_page.html
 function requireLogin() {
     if (!getSession()) {
         localStorage.setItem(STORAGE_REDIRECT, window.location.href);
@@ -21,8 +16,6 @@ function requireLogin() {
     }
 }
  
-// Navigates to the comment creator, but gates it behind login.
-// Used by the "WRITE A COMMENT!" button on the public board.
 function goToCreator() {
     if (getSession()) {
         window.location.href = 'commentcreator_page.html';
@@ -32,7 +25,6 @@ function goToCreator() {
     }
 }
  
-// Clears session and goes back to login
 function logout() {
     localStorage.removeItem(STORAGE_SESSION);
     window.location.href = 'login_page.html';
@@ -64,7 +56,6 @@ function signup(event) {
  
     const users = JSON.parse(localStorage.getItem(STORAGE_USERS)) || [];
  
-    // Reject duplicate usernames
     if (users.find(u => u.username === username)) {
         showTerminalNotification("USERNAME ALREADY REGISTERED.", "error");
         return;
@@ -94,7 +85,6 @@ function login(event) {
  
     localStorage.setItem(STORAGE_SESSION, username);
  
-    // Return to whichever page triggered the login redirect, or default to board
     const redirect = localStorage.getItem(STORAGE_REDIRECT) || 'commentboard_page.html';
     localStorage.removeItem(STORAGE_REDIRECT);
  
@@ -165,7 +155,6 @@ function showTerminalNotification(message, type, callback = null) {
         inputField.focus();
         actionBtn.innerText = "SUBMIT";
  
-        // Show emoji picker only on the content-edit prompt
         if (message === "ENTER NEW CONTENT:") {
             if (emojiBtn) emojiBtn.style.display = 'block';
         }
@@ -274,7 +263,7 @@ function deleteComment(commentId) {
         return;
     }
  
-    // Require typing DELETE to confirm, prevents accidental clicks
+    // Require typing DELETE to confirm; prevents accidental clicks
     showTerminalNotification("TYPE 'DELETE' TO CONFIRM:", "prompt", (input) => {
         if (input.trim().toUpperCase() === 'DELETE') {
             performDeletion(commentId);
@@ -377,10 +366,7 @@ function updateStatistics() {
     document.getElementById('tagSuggestion').innerText  = stats.suggestion;
     document.getElementById('tagMisc').innerText        = stats.misc;
 }
- 
-// INIT
-// renderSessionBar + loadComments run on every page load;
-// each page's own inline script handles any extra init (e.g. requireLogin)
+
 document.addEventListener('DOMContentLoaded', () => {
     renderSessionBar();
     loadComments();
