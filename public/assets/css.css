@@ -286,6 +286,12 @@ body.tech-page .tech-card-image {
   height: 250px;
   background-size: cover;
   background-position: center;
+  box-shadow: 
+  -5px 0 10px -5px rgba(0, 0, 0, 0.5), /* Left shadow */
+   5px 0 10px -5px rgba(0, 0, 0, 0.5);  /* Right shadow */
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
 body.tech-page .tech-card-content {
