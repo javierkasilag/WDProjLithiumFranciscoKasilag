@@ -1,7 +1,5 @@
-// Wait until the DOM is fully loaded before running the script
 document.addEventListener("DOMContentLoaded", () => {
 
-  // Timeline data: each object represents a historical year with its event, image, and alt text
   const timeline = [
     {
       year: "1939",
@@ -64,40 +62,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  // Current index in the timeline array
   let index = 0;
 
-  // Select main timeline elements from the DOM
   const timelineLine = document.getElementById("timeline-line");
   const timelineWrapper = document.querySelector(".timeline-wrapper");
 
-  // Create container for displaying each timeline event
   const eventContainer = document.createElement("div");
   eventContainer.classList.add("timeline-event-container");
 
-  // Create elements for event image and text
   const eventImageEl = document.createElement("img");
   const eventTextEl = document.createElement("div");
   eventTextEl.classList.add("timeline-event");
 
-  // Append image and text to the container
   eventContainer.appendChild(eventImageEl);
   eventContainer.appendChild(eventTextEl);
 
-  // Insert the container into the DOM before the timeline line
   timelineWrapper.insertBefore(eventContainer, timelineLine);
 
-  // Function to generate dots for each timeline event
   function generateDots() {
-    timelineLine.innerHTML = ""; // Clear existing dots
+    timelineLine.innerHTML = "";
 
     timeline.forEach((item, i) => {
       const dot = document.createElement("div");
       dot.classList.add("dot");
       dot.dataset.index = i;
-      dot.title = item.year; // Tooltip shows the year
+      dot.title = item.year;
 
-      // Click event to navigate to the selected timeline event
       dot.onclick = () => {
         index = i;
         updateTimeline(true);
@@ -107,37 +97,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Function to update timeline display based on current index
   function updateTimeline(animate = false) {
-    eventContainer.classList.remove("show"); // Hide container before updating
+    eventContainer.classList.remove("show");
 
     setTimeout(() => {
       const current = timeline[index];
-
-      // Update year, event text, and image
+      
       document.getElementById("year").textContent = current.year;
       eventTextEl.innerHTML = current.event;
       eventImageEl.src = current.image;
       eventImageEl.alt = current.alt;
 
-      void eventContainer.offsetWidth; // Trigger reflow for CSS animation
-      eventContainer.classList.add("show"); // Show container with animation
+      void eventContainer.offsetWidth;
+      eventContainer.classList.add("show");
 
-      // Highlight active dot
       document.querySelectorAll(".dot").forEach((dot, i) => {
         dot.classList.toggle("active-dot", i === index);
       });
 
-      // Show/hide prev/next buttons based on current index
       document.getElementById("prev").style.visibility =
         index === 0 ? "hidden" : "visible";
       document.getElementById("next").style.visibility =
         index === timeline.length - 1 ? "hidden" : "visible";
 
-    }, animate ? 200 : 0); // Delay if animating
+    }, animate ? 200 : 0);
   }
 
-  // Event listeners for next and previous buttons
   document.getElementById("next").onclick = () => {
     if (index < timeline.length - 1) index++;
     updateTimeline(true);
@@ -148,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTimeline(true);
   };
 
-  // Initialize timeline
   generateDots();
   updateTimeline(false);
 
